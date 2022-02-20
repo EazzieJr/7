@@ -52,7 +52,10 @@ export default {
   googleFonts: {
     /* module options */
     families: {
-      Montserrat: [ 400 ]
+      Montserrat: {
+        wght: [ 400, 700 ],
+        ital: [ 700 ]
+      }
     }
   },
 
