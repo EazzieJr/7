@@ -17,7 +17,7 @@
         <div class="image flex justify-center items-center lg:hidden">
             <img
               class="hover-reveal__image"
-              :src="src"
+              :src="`/images/${src}.png`"
               :alt="alt"
             />
         </div>

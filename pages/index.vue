@@ -230,15 +230,16 @@
                 lightweight credit/payment product.
               </HoverLink>
 
-              <HoverLink
-                src="reality-os"
-                href="https://twitter.com/Emishonowayi/status/1381674985459159040?s=20&t=7GoK3yXh-fzjZyJbwP-fow"
-                alt="A cover image for Reality OS"
-                class="reality-os"
-              >
-                <span class="nue-bold">Reality OS:</span> Exploring Design
-                Concepts for an Apple inspired VR/AR interface.
-              </HoverLink>
+              <div v-if="expanded" class="extendend-projects lg:hidden">
+                <HoverLink
+                  src="reality-os"
+                  href="https://twitter.com/Emishonowayi/status/1381674985459159040?s=20&t=7GoK3yXh-fzjZyJbwP-fow"
+                  alt="A cover image for Reality OS"
+                  class="reality-os"
+                >
+                  <span class="nue-bold">Reality OS:</span> Exploring Design
+                  Concepts for an Apple inspired VR/AR interface.
+                </HoverLink>
 
               <HoverLink
                 src="user-profile"
@@ -250,6 +251,34 @@
                   Redesigning a globally used design plugin for greater
                   inclusivity.
               </HoverLink>
+              </div>
+
+              <div class="hidden lg:block">
+                <HoverLink
+                  src="reality-os"
+                  href="https://twitter.com/Emishonowayi/status/1381674985459159040?s=20&t=7GoK3yXh-fzjZyJbwP-fow"
+                  alt="A cover image for Reality OS"
+                  class="reality-os"
+                >
+                  <span class="nue-bold">Reality OS:</span> Exploring Design
+                  Concepts for an Apple inspired VR/AR interface.
+                </HoverLink>
+
+                <HoverLink
+                  src="user-profile"
+                  href=""
+                  alt="A cover image for User Profile Plugin"
+                  class="user-profile"
+                >
+                  <span class="nue-bold">User Profile Plugin:</span>
+                    Redesigning a globally used design plugin for greater
+                    inclusivity.
+                </HoverLink>
+              </div>
+
+              <button class="expand font-montserrat text-[#333333] py-4 px-8 border">
+                Show All Projects
+              </button>
             </div>
           </div>
         </section>
@@ -259,15 +288,15 @@
           id="articles"
         >
           <div class="articles-container">
-            <div class="top-text-and-navigator flex justify-between items-end">
+            <div class="top-text-and-navigator flex justify-between items-center">
               <p
                 class="text-3xl lg:text-4xl xl:text-5xl trans-text-article nue-bold"
               >
                 Articles
               </p>
 
-              <div class="navigators flex space-x-10 mb-2 lg:hidden">
-                <button class="left inactive" @click="moveLeft" ref="left">
+              <div class="navigators flex space-x-5 mb-2 lg:hidden">
+                <button class="left p-3.5" @click="moveLeft" ref="prev">
                   <svg
                     width="9"
                     height="14"
@@ -283,7 +312,7 @@
                   </svg>
                 </button>
 
-                <button class="right active" @click="moveRight" ref="right">
+                <button class="right p-3.5" @click="moveRight" ref="next">
                   <svg
                     width="9"
                     height="14"
@@ -304,19 +333,19 @@
             <div class="bottom mt-10 lg:mt-16">
               <div class="bottom-container" ref="move">
                 <client-only>
-                  <div>
-                    <carousel
+                    <swiper
                       class="flex space-x-4 lg:space-x-8"
-                      ref="mycarousel"
+                      ref="mySwiperRef"
+                      :options="swiperOptions"
                     >
-                      <slide
+                      <swiper-slide
                         v-for="article in articles"
                         :key="article.id"
                         class="article"
                       >
                         <a :href="article.link" class="space-y-4">
                           <div class="top">
-                            <img :src="article.src" :alt="article.alt" />
+                            <img class="w-full" :src="article.src" :alt="article.alt" />
                           </div>
 
                           <div class="bottom">
@@ -330,9 +359,8 @@
                             </p>
                           </div>
                         </a>
-                      </slide>
-                    </carousel>
-                  </div>
+                      </swiper-slide>
+                    </swiper>
                 </client-only>
               </div>
             </div>
@@ -424,7 +452,6 @@
 <script>
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import { Carousel, Slide } from 'vue-carousel';
 import { Cursor } from "~/animations/Cursor";
 gsap.registerPlugin(ScrollTrigger);
 const tl = gsap.timeline();
@@ -440,8 +467,30 @@ export default {
 
   data() {
     return {
-      position: "left",
-      // showCarousel : false,
+      swiperOptions: {
+        loop: true,
+        slidesPerView: 1,
+        centeredSlides: false,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: this.$refs.next,
+          prevEl: this.$refs.prev
+        },
+        breakpoints: {
+          '640': {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          '768': {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          '1024': {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        }
+      },
 
       articles: [
         {
@@ -489,42 +538,11 @@ export default {
     },
 
     moveLeft() {
-      if (this.position === "right") {
-        gsap.to(this.$refs.move, {
-          x: -271,
-        });
-
-        this.position = "middle";
-        this.$refs.right.classList.remove("inactive");
-        this.$refs.right.classList.add("active");
-      } else if (this.position === "middle") {
-        gsap.to(this.$refs.move, {
-          x: 0,
-        });
-
-        this.position = "left";
-        this.$refs.left.classList.remove("active");
-        this.$refs.left.classList.add("inactive");
-      }
+      this.$refs.mySwiperRef.$swiper.slidePrev()
     },
 
     moveRight() {
-      if (this.position === "left") {
-        gsap.to(this.$refs.move, {
-          x: -271,
-        });
-
-        this.position = "middle";
-        this.$refs.left.classList.add("active");
-      } else if (this.position === "middle") {
-        gsap.to(this.$refs.move, {
-          x: -542,
-        });
-
-        this.position = "right";
-        this.$refs.right.classList.remove("active");
-        this.$refs.right.classList.add("inactive");
-      }
+      this.$refs.mySwiperRef.$swiper.slideNext()
     },
 
     beginCursor() {
