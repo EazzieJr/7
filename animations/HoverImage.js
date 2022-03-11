@@ -81,7 +81,7 @@ export default class HoverImage {
             .timeline({
                 onStart: () => {
                     // set a high z-index value so image appears on top of other elements
-                    gsap.set(this.DOM.el, { zIndex: 4 });
+                    gsap.set(this.DOM.el, { zIndex: 99 });
 
                     // show the image element
                     this.DOM.reveal.style.opacity = 1;

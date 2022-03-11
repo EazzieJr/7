@@ -276,9 +276,11 @@
                 </HoverLink>
               </div>
 
-              <button class="expand font-montserrat text-[#333333] py-4 px-8 border">
-                Show All Projects
-              </button>
+              <div class="w-full flex justify-center lg:hidden">
+                <button class="expand text-sm font-montserrat text-[#333333] py-4 px-8 border-black border mt-4" @click="expand">
+                  {{ stats }} Projects
+                </button>
+              </div>
             </div>
           </div>
         </section>
@@ -467,6 +469,9 @@ export default {
 
   data() {
     return {
+      expanded: false,
+      stats: "Show All",
+      
       swiperOptions: {
         loop: true,
         slidesPerView: 1,
@@ -557,6 +562,16 @@ export default {
         link.addEventListener("mouseleave", () => cursor.leave());
       });
     },
+
+    expand() {
+      if(!this.expanded) {
+        this.expanded = !this.expanded
+        this.stats = "Collapse"
+      } else {
+        this.expanded = !this.expanded
+        this.stats = "Show All"
+      }
+    }
   },
 };
 </script>
@@ -708,9 +723,10 @@ export default {
   background-color: #e4e4e4;
   top: 0;
   left: 0;
+  z-index: -2;
 }
 
-.work:last-child::after {
+/* .work:last-child::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -718,7 +734,7 @@ export default {
   background-color: #e4e4e4;
   bottom: 0;
   left: 0;
-}
+} */
 
 /* All */
 * {
