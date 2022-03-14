@@ -10,7 +10,7 @@
           <div class="hover-reveal__inner">
             <img
               class="hover-reveal__image"
-              :src="`Images/large-${src}.png`"
+              :src="`Images/${src}.png`"
               :alt="alt"
             />
           </div>
