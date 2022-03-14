@@ -1,18 +1,7 @@
 <template>
   <div>
-    <svg
-      class="cursor black"
-      width="32"
-      ref="cursor"
-      height="32"
-      viewBox="0 0 20 20"
-    >
-      <circle class="cursor__inner" cx="10" cy="10" r="5" />
-    </svg>
-
     <section
-      class="relative w-full h-screen bg-center bg-no-repeat bg-cover hero"
-      style="background-image: url('/svg/Hero.svg')"
+      class="relative w-full bg-small-hero md:bg-big-hero h-screen bg-center bg-no-repeat bg-cover hero"
     >
       <div
         class="container relative mx-auto px-7 sm:px-10 md:px-12 lg:px-16 z-[3]"
@@ -129,7 +118,7 @@
         >
           <div class="hero-text">
             <h1
-              class="nue-bold text-[32px] lg:text-[2.5rem] xl:text-5xl 2xl:text-6xl text-white px-3 leading-[57px] lg:leading-relaxed xl:leading-[180%] 2xl:leading-[200%]"
+              class="nue-bold text-[32px] lg:text-[2.5rem] xl:text-5xl 2xl:text-[52px] 3xl:text-[64px] text-white px-3 leading-[57px] lg:leading-relaxed xl:leading-[180%] 2xl:leading-[200%]"
             >
               <span class="text-[#FDEA02]">Humanizing</span> technology<br
                 class="hidden lg:block"
@@ -140,8 +129,8 @@
           </div>
         </div>
 
-        <div class="mouse-scroll absolute bottom-[40px] left-1/2 transform -translate-x-1/2">
-          <img class="w-10" src="/images/mouse-scroll.gif" alt="">
+        <div class="mouse-scroll absolute bottom-[64px] lg:bottom-[32px] left-1/2 transform -translate-x-1/2">
+          <img class="w-16" src="/images/mouse-scroll.gif" alt="">
         </div>
       </div>
     </section>
@@ -170,15 +159,15 @@
 
             <div class="text sm:px-14 lg:px-32 2xl:px-48">
               <p
-                class="font-montserrat text-center text-sm lg:text-base xl:text-lg 2xl:text-xl text-[#333333] leading-[35px] lg:leading-[35px] xl:leading-[44px] 2xl:leading-[44px]"
+                class="font-montserrat text-center text-sm lg:text-base xl:text-xl text-[#333333] leading-[35px] lg:leading-[35px] xl:leading-[44px] 2xl:leading-[44px]"
               >
-                Hi, I'm Emisho Ui/Ux Designer skilled in delivering unique
+                Hi I'm Emisho, a UI/UX Designer skilled in delivering unique
                 digital experiences through <br class="hidden xl:block" />
-                design that is fueled by user empathy & driven by creative
+                design that is fueled by empathy & driven by creative
                 storytelling. <br class="hidden xl:block" />
-                I'm also your typical nerd, wannabe image game critic, and that
+                I'm also a huge nerd, wannabe video game critic and that
                 one guy who knows way <br class="hidden xl:block" />
-                too much stuff no one really cares about. Here's some of my
+                too much random stuff. Here's some of my
                 design work.
               </p>
             </div>
@@ -193,7 +182,7 @@
             class="space-y-10 sm:space-y-14 featured-work-container relative"
           >
             <div class="top-text">
-              <p class="text-3xl lg:text-4xl xl:text-5xl trans-text nue-bold">
+              <p class="text-[28px] lg:text-4xl xl:text-5xl trans-text nue-bold">
                 Featured Work
               </p>
             </div>
@@ -212,12 +201,12 @@
 
               <HoverLink
                 src="waybill"
-                href="https://www.behance.net/gallery/138142449/Website-Redesign-for-Open-Source-Project"
+                href=""
                 alt="A cover image for Waybill"
                 class="waybill"
               >
                 <span class="nue-bold">Waybill:</span> Building a secure &
-                unified platform for Nigerian logistics.
+                unified platform for Nigerian logistics. <span class="text-[#bbbbbb] lg:hidden">(Coming Soon...)</span>
               </HoverLink>
 
               <HoverLink
@@ -241,16 +230,16 @@
                   Concepts for an Apple inspired VR/AR interface.
                 </HoverLink>
 
-              <HoverLink
-                src="user-profile"
-                href=""
-                alt="A cover image for User Profile Plugin"
-                class="user-profile"
-              >
-                <span class="nue-bold">User Profile Plugin:</span>
-                  Redesigning a globally used design plugin for greater
-                  inclusivity.
-              </HoverLink>
+                <HoverLink
+                  src="user-profile"
+                  href=""
+                  alt="A cover image for User Profile Plugin"
+                  class="user-profile"
+                >
+                  <span class="nue-bold">User Profile Plugin:</span>
+                    Redesigning a globally used design plugin for greater
+                    inclusivity. <span class="text-[#bbbbbb] lg:hidden">(Coming Soon...)</span>
+                </HoverLink>
               </div>
 
               <div class="hidden lg:block">
@@ -286,13 +275,14 @@
         </section>
 
         <section
+          data-cuberto-jelly
           class="articles pb-32 lg:py-32 xl:py-60 2xl:py-60 overflow-x-hidden"
           id="articles"
         >
           <div class="articles-container">
             <div class="top-text-and-navigator flex justify-between items-center">
               <p
-                class="text-3xl lg:text-4xl xl:text-5xl trans-text-article nue-bold"
+                class="text-[28px] lg:text-4xl xl:text-5xl trans-text-article nue-bold"
               >
                 Articles
               </p>
@@ -335,35 +325,37 @@
             <div class="bottom mt-10 lg:mt-16">
               <div class="bottom-container" ref="move">
                 <client-only>
-                    <swiper
-                      class="flex space-x-4 lg:space-x-8"
-                      ref="mySwiperRef"
-                      :options="swiperOptions"
+                  <swiper
+                    class="flex space-x-4 lg:space-x-8 pb-20"
+                    ref="mySwiperRef"
+                    :options="swiperOptions"
+                  >
+                    <swiper-slide
+                      v-for="article in articles"
+                      :key="article.id"
+                      class="article"
                     >
-                      <swiper-slide
-                        v-for="article in articles"
-                        :key="article.id"
-                        class="article"
-                      >
-                        <a :href="article.link" class="space-y-4">
-                          <div class="top">
-                            <img class="w-full" :src="article.src" :alt="article.alt" />
-                          </div>
+                      <a :href="article.link" class="space-y-4">
+                        <div class="top">
+                          <img class="w-full" :src="article.src" :alt="article.alt" />
+                        </div>
 
-                          <div class="bottom">
-                            <p
-                              class="nue-bold text-[#333333] xl:text-xl xl:text-[#999999]"
-                            >
-                              {{ article.topic }}
-                              <span class="text-[#bbbbbb]">
-                                {{ article.span }}
-                              </span>
-                            </p>
-                          </div>
-                        </a>
-                      </swiper-slide>
-                    </swiper>
+                        <div class="bottom">
+                          <p
+                            class="nue-bold text-[#333333] xl:text-xl xl:text-[#999999]"
+                          >
+                            {{ article.topic }}
+                            <span class="text-[#bbbbbb]">
+                              {{ article.span }}
+                            </span>
+                          </p>
+                        </div>
+                      </a>
+                    </swiper-slide>
+                  </swiper>
                 </client-only>
+                
+                <div class="swiper-pagination mt-5 space-x-4 lg:hidden" slot="pagination"></div>
               </div>
             </div>
           </div>
@@ -380,7 +372,7 @@
             <div class="py-20 xl:py-28 main-footer">
               <div class="texts">
                 <h2
-                  class="text-3xl lg:text-4xl xl:text-5xl trans-text-connect nue-bold"
+                  class="text-[28px] lg:text-4xl xl:text-5xl trans-text-connect nue-bold"
                 >
                   Let's Connect
                 </h2>
@@ -399,7 +391,7 @@
                 </p>
 
                 <ul
-                  class="flex items-center justify-between mt-8 xl:mt-16 text-base text-white xl:text-xl 2xl:text-2xl links nue-bold xl:w-[386px] 2xl:w-[430px]"
+                  class="flex items-center justify-between mt-8 xl:mt-16 text-base text-white xl:text-xl 2xl:text-2xl links nue-bold xl:w-[410px] 2xl:w-[500px]"
                 >
                   <li>
                     <a
@@ -455,6 +447,8 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Cursor } from "~/animations/Cursor";
+import JellyEffect from "~/animations/jelly.js";
+// import Scrollbar from "smooth-scrollbar";
 gsap.registerPlugin(ScrollTrigger);
 const tl = gsap.timeline();
 
@@ -480,6 +474,10 @@ export default {
         navigation: {
           nextEl: this.$refs.next,
           prevEl: this.$refs.prev
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          dynamicBullets: false
         },
         breakpoints: {
           '640': {
@@ -517,7 +515,7 @@ export default {
           src: "https://res.cloudinary.com/eazzie/image/upload/v1645811004/emishio/Typewriter_p6gf9s.gif",
           alt: "A gif of topic image",
           topic: "The Death of User-friendly You-X",
-          span: " (Comi...)",
+          span: " (Coming soon)",
         },
       ],
     };
@@ -573,10 +571,28 @@ export default {
       }
     }
   },
+
+  mounted() {
+    new JellyEffect({
+      // set function to get current scrollTop position
+      // scrollPos: () => scrollbar.offset.y
+    });
+  }
 };
 </script>
 
 <style lang="postcss">
+.swiper-conatiner {
+  padding-bottom: 4rem;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+  width: 47px;
+  height: 4px;
+  background-color: #333333;
+  border-radius: 0px;
+}
+
 .sub-hero{
   height: calc(100% - 104px);
 }
@@ -726,7 +742,7 @@ export default {
   z-index: -2;
 }
 
-/* .work:last-child::after {
+.work:last-child::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -734,7 +750,8 @@ export default {
   background-color: #e4e4e4;
   bottom: 0;
   left: 0;
-} */
+  @apply hidden lg:block
+}
 
 /* All */
 * {

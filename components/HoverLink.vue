@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="py-8 lg:py-10 xl:py-12 lg:opacity-[0.5] work lg:hover:opacity-[1] relative" ref="hoverLink">
-      <a :href="href" class="space-y-3 relative">
+    <a :href="href" target="blank" class="relative">
+      <div class="space-y-3 py-8 lg:py-10 xl:py-12 lg:opacity-[0.5] work lg:hover:opacity-[1] relative" ref="hoverLink">
         <!-- Hover Image container for large screens -->
         <div class="hover-reveal absolute hidden lg:block">
           <div class="hover-reveal__inner">
@@ -17,7 +17,7 @@
         <div class="image flex justify-center items-center lg:hidden">
             <img
               class="hover-reveal__image"
-              :src="`/images/${src}.png`"
+              :src="`/images/large-${src}.png`"
               :alt="alt"
             />
         </div>
@@ -29,8 +29,8 @@
             <slot> </slot>
           </p>
         </div>
-      </a>
-    </div>
+      </div>
+    </a>
   </div>
 </template>
 
