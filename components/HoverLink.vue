@@ -6,20 +6,20 @@
         ref="hoverLink"
       >
         <!-- Hover Image container for large screens -->
-        <div class="hover-reveal absolute hidden lg:block">
+        <div class="hover-reveal hidden lg:block">
           <div class="hover-reveal__inner">
             <img
               class="hover-reveal__image"
-              :src="`Images/${src}.png`"
+              :src="`Images/large-${src}.png`"
               :alt="alt"
-            />
+            />-
           </div>
         </div>
 
         <!-- Image for small screens -->
         <div class="image flex justify-center items-center lg:hidden">
           <img
-            class="hover-reveal__image"
+            class=""
             :src="`Images/${src}.png`"
             :alt="alt"
           />
@@ -71,16 +71,6 @@ export default {
 .hover-reveal__image {
   object-fit: cover;
   object-position: 50% 50%;
-
-  @include media("<=tablet") {
-    display: none;
-  }
-
-  &.mobile {
-    @include media("<=tablet") {
-      display: block;
-    }
-  }
 }
 
 .hover-reveal {
