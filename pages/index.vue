@@ -129,15 +129,17 @@
           </div>
         </div>
 
-        <div class="mouse-scroll absolute bottom-[64px] lg:bottom-[32px] left-1/2 transform -translate-x-1/2">
-          <img class="w-16" src="/images/mouse-scroll.gif" alt="">
+        <div
+          class="mouse-scroll absolute bottom-[64px] lg:bottom-[32px] left-1/2 transform -translate-x-1/2"
+        >
+          <img class="w-16" src="Images/mouse-scroll.gif" alt="" />
         </div>
       </div>
     </section>
 
     <div
       class="noise overflow-hidden"
-      style="background-image: url('/images/noise.png')"
+      style="background-image: url('Images/noise.png')"
     >
       <div class="container h-full mx-auto px-7 sm:px-10 md:px-12 lg:px-16">
         <section class="about py-28 lg:py-32 xl:py-44 2xl:py-56" id="about">
@@ -145,14 +147,14 @@
             <div class="image center">
               <img
                 class="lg:hidden"
-                src="/images/small-person.png"
+                src="Images/small-person.png"
                 alt="An image of Emishio"
               />
 
               <!-- A bigger image for screen 1024 -->
               <img
                 class="hidden lg:block"
-                src="/images/big-person.png"
+                src="Images/big-person.png"
                 alt="An image of Emishio"
               />
             </div>
@@ -165,10 +167,9 @@
                 digital experiences through <br class="hidden xl:block" />
                 design that is fueled by empathy & driven by creative
                 storytelling. <br class="hidden xl:block" />
-                I'm also a huge nerd, wannabe video game critic and that
-                one guy who knows way <br class="hidden xl:block" />
-                too much random stuff. Here's some of my
-                design work.
+                I'm also a huge nerd, wannabe video game critic and that one guy
+                who knows way <br class="hidden xl:block" />
+                too much random stuff. Here's some of my design work.
               </p>
             </div>
           </div>
@@ -182,7 +183,9 @@
             class="space-y-10 sm:space-y-14 featured-work-container relative"
           >
             <div class="top-text">
-              <p class="text-[28px] lg:text-4xl xl:text-5xl trans-text nue-bold">
+              <p
+                class="text-[28px] lg:text-4xl xl:text-5xl trans-text nue-bold"
+              >
                 Featured Work
               </p>
             </div>
@@ -206,7 +209,8 @@
                 class="waybill"
               >
                 <span class="nue-bold">Waybill:</span> Building a secure &
-                unified platform for Nigerian logistics. <span class="text-[#bbbbbb] lg:hidden">(Coming Soon...)</span>
+                unified platform for Nigerian logistics.
+                <span class="text-[#bbbbbb] lg:hidden">(Coming Soon...)</span>
               </HoverLink>
 
               <HoverLink
@@ -215,8 +219,8 @@
                 alt="A cover image for Paymagic"
                 class="paymagic"
               >
-                <span class="nue-bold">Paymagic:</span> Crafting a
-                lightweight credit/payment product.
+                <span class="nue-bold">Paymagic:</span> Crafting a lightweight
+                credit/payment product.
               </HoverLink>
 
               <div v-if="expanded" class="extendend-projects lg:hidden">
@@ -237,8 +241,9 @@
                   class="user-profile"
                 >
                   <span class="nue-bold">User Profile Plugin:</span>
-                    Redesigning a globally used design plugin for greater
-                    inclusivity. <span class="text-[#bbbbbb] lg:hidden">(Coming Soon...)</span>
+                  Redesigning a globally used design plugin for greater
+                  inclusivity.
+                  <span class="text-[#bbbbbb] lg:hidden">(Coming Soon...)</span>
                 </HoverLink>
               </div>
 
@@ -260,13 +265,16 @@
                   class="user-profile"
                 >
                   <span class="nue-bold">User Profile Plugin:</span>
-                    Redesigning a globally used design plugin for greater
-                    inclusivity.
+                  Redesigning a globally used design plugin for greater
+                  inclusivity.
                 </HoverLink>
               </div>
 
               <div class="w-full flex justify-center lg:hidden">
-                <button class="expand text-sm font-montserrat text-[#333333] py-4 px-8 border-black border mt-4" @click="expand">
+                <button
+                  class="expand text-sm font-montserrat text-[#333333] py-4 px-8 border-black border mt-4"
+                  @click="expand"
+                >
                   {{ stats }} Projects
                 </button>
               </div>
@@ -280,7 +288,9 @@
           id="articles"
         >
           <div class="articles-container">
-            <div class="top-text-and-navigator flex justify-between items-center">
+            <div
+              class="top-text-and-navigator flex justify-between items-center"
+            >
               <p
                 class="text-[28px] lg:text-4xl xl:text-5xl trans-text-article nue-bold"
               >
@@ -337,7 +347,11 @@
                     >
                       <a :href="article.link" class="space-y-4">
                         <div class="top">
-                          <img class="w-full" :src="article.src" :alt="article.alt" />
+                          <img
+                            class="w-full"
+                            :src="article.src"
+                            :alt="article.alt"
+                          />
                         </div>
 
                         <div class="bottom">
@@ -354,8 +368,11 @@
                     </swiper-slide>
                   </swiper>
                 </client-only>
-                
-                <div class="swiper-pagination mt-5 space-x-4 lg:hidden" slot="pagination"></div>
+
+                <div
+                  class="swiper-pagination mt-5 space-x-4 lg:hidden"
+                  slot="pagination"
+                ></div>
               </div>
             </div>
           </div>
@@ -433,7 +450,7 @@
           <div class="hidden right-container md:block">
             <img
               class="absolute bottom-0 right-0 w-[250px] lg:w-[250px] xl:w-[300px] 2xl:w-[340px] xl:mr-20 2xl:mr-32"
-              src="/images/hand.png"
+              src="Images/hand.png"
               alt="A fisted hand with 2 pointed fingers"
             />
           </div>
@@ -465,7 +482,7 @@ export default {
     return {
       expanded: false,
       stats: "Show All",
-      
+
       swiperOptions: {
         loop: true,
         slidesPerView: 1,
@@ -473,26 +490,26 @@ export default {
         spaceBetween: 10,
         navigation: {
           nextEl: this.$refs.next,
-          prevEl: this.$refs.prev
+          prevEl: this.$refs.prev,
         },
         pagination: {
-          el: '.swiper-pagination',
-          dynamicBullets: false
+          el: ".swiper-pagination",
+          dynamicBullets: false,
         },
         breakpoints: {
-          '640': {
+          640: {
             slidesPerView: 2,
             spaceBetween: 10,
           },
-          '768': {
+          768: {
             slidesPerView: 2,
             spaceBetween: 40,
           },
-          '1024': {
+          1024: {
             slidesPerView: 3,
             spaceBetween: 30,
           },
-        }
+        },
       },
 
       articles: [
@@ -541,11 +558,11 @@ export default {
     },
 
     moveLeft() {
-      this.$refs.mySwiperRef.$swiper.slidePrev()
+      this.$refs.mySwiperRef.$swiper.slidePrev();
     },
 
     moveRight() {
-      this.$refs.mySwiperRef.$swiper.slideNext()
+      this.$refs.mySwiperRef.$swiper.slideNext();
     },
 
     beginCursor() {
@@ -562,14 +579,14 @@ export default {
     },
 
     expand() {
-      if(!this.expanded) {
-        this.expanded = !this.expanded
-        this.stats = "Collapse"
+      if (!this.expanded) {
+        this.expanded = !this.expanded;
+        this.stats = "Collapse";
       } else {
-        this.expanded = !this.expanded
-        this.stats = "Show All"
+        this.expanded = !this.expanded;
+        this.stats = "Show All";
       }
-    }
+    },
   },
 
   mounted() {
@@ -577,7 +594,7 @@ export default {
       // set function to get current scrollTop position
       // scrollPos: () => scrollbar.offset.y
     });
-  }
+  },
 };
 </script>
 
@@ -593,7 +610,7 @@ export default {
   border-radius: 0px;
 }
 
-.sub-hero{
+.sub-hero {
   height: calc(100% - 104px);
 }
 
@@ -750,7 +767,7 @@ export default {
   background-color: #e4e4e4;
   bottom: 0;
   left: 0;
-  @apply hidden lg:block
+  @apply hidden lg:block;
 }
 
 /* All */

@@ -1,13 +1,16 @@
 <template>
   <div>
     <a :href="href" target="blank" class="relative">
-      <div class="space-y-3 py-8 lg:py-10 xl:py-12 lg:opacity-[0.5] work lg:hover:opacity-[1] relative" ref="hoverLink">
+      <div
+        class="space-y-3 py-8 lg:py-10 xl:py-12 lg:opacity-[0.5] work lg:hover:opacity-[1] relative"
+        ref="hoverLink"
+      >
         <!-- Hover Image container for large screens -->
         <div class="hover-reveal absolute hidden lg:block">
           <div class="hover-reveal__inner">
             <img
               class="hover-reveal__image"
-              :src="`/images/large-${src}.png`"
+              :src="`Images/large-${src}.png`"
               :alt="alt"
             />
           </div>
@@ -15,11 +18,11 @@
 
         <!-- Image for small screens -->
         <div class="image flex justify-center items-center lg:hidden">
-            <img
-              class="hover-reveal__image"
-              :src="`/images/large-${src}.png`"
-              :alt="alt"
-            />
+          <img
+            class="hover-reveal__image"
+            :src="`Images/large-${src}.png`"
+            :alt="alt"
+          />
         </div>
 
         <div class="text">
@@ -59,7 +62,7 @@ export default {
 
 <style lang="postcss" scoped>
 .work {
-    mix-blend-mode: exclusion;
+  mix-blend-mode: exclusion;
 }
 
 /* p:hover .hover-reveal{
