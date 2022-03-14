@@ -20,7 +20,7 @@
         <div class="image flex justify-center items-center lg:hidden">
           <img
             class=""
-            :src="`Images/${src}.png`"
+            :src="`Images/large-${src}.png`"
             :alt="alt"
           />
         </div>
