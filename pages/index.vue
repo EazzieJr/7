@@ -1,7 +1,7 @@
-<template>
+<template id="js-scroll">
   <div>
     <section
-      class="relative w-full bg-small-hero md:bg-big-hero h-screen bg-center bg-no-repeat bg-cover hero"
+      class="relative w-full h-screen bg-center bg-no-repeat bg-cover bg-small-hero md:bg-big-hero hero"
     >
       <div
         class="container relative mx-auto px-7 sm:px-10 md:px-12 lg:px-16 z-[3]"
@@ -57,7 +57,7 @@
                 ref="menu"
                 @click="open"
               >
-                <div class="middle relative"></div>
+                <div class="relative middle"></div>
               </button>
             </div>
           </div>
@@ -72,7 +72,7 @@
           class="flex flex-col items-center justify-center dropdown-container"
         >
           <ul
-            class="space-y-10 text-3xl text-center text-white font-light font-montserrat sm:text-4xl sm:space-y-12"
+            class="space-y-10 text-3xl font-light text-center text-white font-montserrat sm:text-4xl sm:space-y-12"
           >
             <li>
               <a
@@ -138,7 +138,7 @@
     </section>
 
     <div
-      class="noise overflow-hidden"
+      class="overflow-hidden noise"
       style="background-image: url('Images/noise.png')"
     >
       <div class="container h-full mx-auto px-7 sm:px-10 md:px-12 lg:px-16">
@@ -176,11 +176,11 @@
         </section>
 
         <section
-          class="featured-work pb-32 lg:py-10 xl:py-16 2xl:py-20"
+          class="pb-32 featured-work lg:py-10 xl:py-16 2xl:py-20"
           id="work"
         >
           <div
-            class="space-y-10 sm:space-y-14 featured-work-container relative"
+            class="relative space-y-10 sm:space-y-14 featured-work-container"
           >
             <div class="top-text">
               <p
@@ -190,7 +190,7 @@
               </p>
             </div>
 
-            <div class="bottom-projects relative">
+            <div class="relative bottom-projects">
               <HoverLink
                 src="made-in-nigeria"
                 href="https://www.behance.net/gallery/138142449/Website-Redesign-for-Open-Source-Project"
@@ -270,7 +270,7 @@
                 </HoverLink>
               </div>
 
-              <div class="w-full flex justify-center lg:hidden">
+              <div class="flex justify-center w-full lg:hidden">
                 <button
                   class="expand text-sm font-montserrat text-[#333333] py-4 px-8 border-black border mt-4"
                   @click="expand"
@@ -283,13 +283,12 @@
         </section>
 
         <section
-          data-cuberto-jelly
-          class="articles pb-32 lg:py-32 xl:py-60 2xl:py-60 overflow-x-hidden"
+          class="pb-32 overflow-x-hidden articles lg:py-32 xl:py-60 2xl:py-60"
           id="articles"
         >
           <div class="articles-container">
             <div
-              class="top-text-and-navigator flex justify-between items-center"
+              class="flex items-center justify-between top-text-and-navigator"
             >
               <p
                 class="text-[28px] lg:text-4xl xl:text-5xl trans-text-article nue-bold"
@@ -297,7 +296,7 @@
                 Articles
               </p>
 
-              <div class="navigators flex space-x-5 mb-2 lg:hidden">
+              <div class="flex mb-2 space-x-5 navigators lg:hidden">
                 <button class="left p-3.5" @click="moveLeft" ref="prev">
                   <svg
                     width="9"
@@ -332,11 +331,11 @@
               </div>
             </div>
 
-            <div class="bottom mt-10 lg:mt-16">
+            <div class="mt-10 bottom lg:mt-16">
               <div class="bottom-container" ref="move">
                 <client-only>
                   <swiper
-                    class="flex space-x-4 lg:space-x-8 pb-20"
+                    class="flex pb-20 space-x-4 lg:space-x-8"
                     ref="mySwiperRef"
                     :options="swiperOptions"
                   >
@@ -370,7 +369,7 @@
                 </client-only>
 
                 <div
-                  class="swiper-pagination mt-5 space-x-4 lg:hidden"
+                  class="mt-5 space-x-4 swiper-pagination lg:hidden"
                   slot="pagination"
                 ></div>
               </div>
@@ -383,7 +382,7 @@
     <footer class="overflow-hidden bg-black" id="contact">
       <div class="container mx-auto px-7 sm:px-10 md:px-12 lg:px-16">
         <div
-          class="items-center relative justify-between py-10 2xl:justify-start xl:py-14 md:flex footer-container"
+          class="relative items-center justify-between py-10 2xl:justify-start xl:py-14 md:flex footer-container"
         >
           <div class="left-container md:w-1/2">
             <div class="py-20 xl:py-28 main-footer">
@@ -395,7 +394,7 @@
                 </h2>
 
                 <p
-                  class="text-white small-talk xl:text-xl 2xl:text-2xl font-montserrat leading-[28.8px] xl:leading-[180%] 2xl:leading-[200%] mt-5"
+                  class="text-white small-talk xl:text-xl font-montserrat leading-[28.8px] xl:leading-[180%] 2xl:leading-[200%] mt-5"
                 >
                   For work, send me an email @ <br class="lg:hidden" />
                   <span class="text-[#FDEA02]"
@@ -482,6 +481,7 @@ export default {
     return {
       expanded: false,
       stats: "Show All",
+      lmS: null,
 
       swiperOptions: {
         loop: true,
@@ -590,10 +590,16 @@ export default {
   },
 
   mounted() {
-    new JellyEffect({
-      // set function to get current scrollTop position
-      // scrollPos: () => scrollbar.offset.y
-    });
+    // this.lmS = new this.locomotiveScroll({
+    //   el: document.querySelector("#js-scroll"),
+    //   smooth: true
+    // });
+    // console.log("lmS", this.lmS);
+
+    // new JellyEffect({
+    //   // set function to get current scrollTop position
+    //   scrollPos: () => this.locomotiveScroll.offset.y
+    // });
   },
 };
 </script>
