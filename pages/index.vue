@@ -1,20 +1,20 @@
 <template id="js-scroll">
   <div class="body">
-    <!-- <transition name="fade" appear> -->
-      <div v-if="!loaded" class="w-full h-screen bg-black preloader center">
+    <transition name="fade" appear>
+      <div v-show="!loaded" class="w-full h-screen bg-black preloader center">
         <video class="w-60" src="videos/preloader.mp4" autoplay loop muted playsinline />
       </div>
-    <!-- </transition> -->
+    </transition>
     
-    <!-- <transition name="fade" appear> -->
-      <div v-if="loaded">
+    <transition name="fade" appear>
+      <div v-show="loaded">
         <section class="relative w-full h-screen bg-center bg-no-repeat bg-cover bg-small-hero md:bg-big-hero hero">
           <div class="container relative mx-auto px-7 sm:px-10 md:px-12 lg:px-16 z-[3]">
             <nav class="z-[4]">
-              <div class="nav-container py-10 flex justify-between items-center z-[999]">
+              <div class="nav-container py-10 flex justify-between items-center z-[999] opacity-0" ref="navContainer">
                 <div class="left-container">
-                  <div class="overflow-hidden">
-                    <Logo class="transform translate-y-5 logo" ref="logo"/>
+                  <div class="">
+                    <Logo class="logo" ref="logo"/>
                   </div>
                 </div>
 
@@ -29,7 +29,7 @@
                   </div>
 
                   <button
-                    class="menu-btn md:hidden space-y-1.5 opacity-0"
+                    class="menu-btn md:hidden space-y-1.5"
                     ref="menu"
                     @click="open"
                   >
@@ -42,8 +42,8 @@
 
           <div class="dropdown absolute md:hidden w-full h-[0] bg-black z-[2] flex justify-center items-center top-0 left-0 right-0 overflow-y-hidden" ref="dropdown">
             <div class="flex flex-col items-center justify-center dropdown-container">
-              <ul class="space-y-10 text-3xl font-light text-center text-white font-montserrat sm:text-4xl sm:space-y-12">
-                <ListItem title="about" />
+              <ul class="space-y-10 text-3xl text-center text-white font-montserrat sm:text-4xl sm:space-y-12">
+                <ListItem title="about" class="font-thin "/>
                 <ListItem title="work" />
                 <ListItem title="articles" />
                 <ListItem title="contact" />
@@ -78,7 +78,7 @@
         </section>
 
         <div
-          class="overflow-hidden noise"
+          class="overflow-hidden noise bg-white"
           style="background-image: url('Images/noise.png')"
         >
           <div class="container h-full mx-auto px-7 sm:px-10 md:px-12 lg:px-16">
@@ -122,7 +122,7 @@
               <div
                 class="relative space-y-10 sm:space-y-14 featured-work-container"
               >
-                <div class="top-text overflow-y-hidden">
+                <div class="top-text">
                   <p
                     class="text-[28px] lg:text-4xl xl:text-5xl trans-text nue-bold"
                   >
@@ -397,7 +397,7 @@
           </div>
         </footer>
       </div>
-    <!-- </transition> -->
+    </transition>
   </div>
 </template>
 
@@ -419,7 +419,7 @@ export default {
       expanded: false,
       stats: "Show All",
       lmS: null,
-      loaded: true,
+      loaded: false,
 
       swiperOptions: {
         loop: true,
@@ -528,34 +528,34 @@ export default {
 
     toggleLoader() {
       setTimeout(() => {
+        this.animateHero()
         this.loaded = true
       }, 4000)
+    },
+
+    animateHero() {
+      gsap.to(".nav-container", {
+        opacity: 1,
+        delay: 1,
+      })
+
+      gsap.to(".mouse-scroll img", {
+        opacity: 1,
+        delay: 2,
+      })
+      
+      gsap.to(".hero-text div h1 span", {
+        y: 0,
+        stagger: 0.125,
+        delay: 1
+      })
     }
   },
 
   mounted() {
     this.toggleLoader()
 
-    tl.to(".logo", {
-      y: 0,
-      delay: 1,
-    })
-
-    .to(".right-container .navlist ul li, .right-container button", {
-      y: 0,
-      opacity: 1,
-      stagger: 0.125
-    })
-
-    .to(".mouse-scroll img", {
-      opacity: 1
-    })
     
-    .to(".hero-text div h1 span", {
-      y: 0,
-      stagger: 0.125,
-      delay: -1
-    })
     
     // this.lmS = new this.locomotiveScroll({
     //   el: document.querySelector("#js-scroll"),
@@ -572,6 +572,9 @@ export default {
 </script>
 
 <style lang="postcss">
+body {
+  background-color: black;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: all .5s;

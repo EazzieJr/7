@@ -1,6 +1,6 @@
 <template>
   <div>
-      <li class="transform translate-y-5">
+      <li class="">
         <a
             :href="`#${title}`"
             class="hover:text-[#FDEA02] transition duration-500 capitalize"
