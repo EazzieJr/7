@@ -1,461 +1,403 @@
 <template id="js-scroll">
-  <div>
-    <section
-      class="relative w-full h-screen bg-center bg-no-repeat bg-cover bg-small-hero md:bg-big-hero hero"
-    >
-      <div
-        class="container relative mx-auto px-7 sm:px-10 md:px-12 lg:px-16 z-[3]"
-      >
-        <nav class="z-[4]">
-          <div
-            class="nav-container py-10 flex justify-between items-center z-[999]"
-          >
-            <div class="left-container">
-              <div class="logo">
-                <Logo />
+  <div class="body">
+    <!-- <transition name="fade" appear> -->
+      <div v-if="!loaded" class="w-full h-screen bg-black preloader center">
+        <video class="w-60" src="videos/preloader.mp4" autoplay loop muted playsinline />
+      </div>
+    <!-- </transition> -->
+    
+    <!-- <transition name="fade" appear> -->
+      <div v-if="loaded">
+        <section class="relative w-full h-screen bg-center bg-no-repeat bg-cover bg-small-hero md:bg-big-hero hero">
+          <div class="container relative mx-auto px-7 sm:px-10 md:px-12 lg:px-16 z-[3]">
+            <nav class="z-[4]">
+              <div class="nav-container py-10 flex justify-between items-center z-[999]">
+                <div class="left-container">
+                  <div class="overflow-hidden">
+                    <Logo class="transform translate-y-5 logo" ref="logo"/>
+                  </div>
+                </div>
+
+                <div class="right-container">
+                  <div class="hidden navlist md:block">
+                    <ul class="flex overflow-hidden text-sm text-white font-montserrat xl:text-base 2xl:text-xl space-x-7 lg:space-x-10 xl:space-x-14 2xl:space-x-20">
+                      <ListItem title="about" />
+                      <ListItem title="work" />
+                      <ListItem title="articles" />
+                      <ListItem title="contact" />
+                    </ul>
+                  </div>
+
+                  <button
+                    class="menu-btn md:hidden space-y-1.5 opacity-0"
+                    ref="menu"
+                    @click="open"
+                  >
+                    <div class="relative middle"></div>
+                  </button>
+                </div>
+              </div>
+            </nav>
+          </div>
+
+          <div class="dropdown absolute md:hidden w-full h-[0] bg-black z-[2] flex justify-center items-center top-0 left-0 right-0 overflow-y-hidden" ref="dropdown">
+            <div class="flex flex-col items-center justify-center dropdown-container">
+              <ul class="space-y-10 text-3xl font-light text-center text-white font-montserrat sm:text-4xl sm:space-y-12">
+                <ListItem title="about" />
+                <ListItem title="work" />
+                <ListItem title="articles" />
+                <ListItem title="contact" />
+              </ul>
+            </div>
+          </div>
+
+          <div class="container relative h-full sub-hero mx-auto px-7 sm:px-10 md:px-12 lg:px-16 z-[1]">
+            <div class="hero-container w-full h-[80%] flex justify-center items-center text-center">
+              <div class="hero-text">
+                <div class="nue-bold text-[32px] lg:text-[2.5rem] xl:text-5xl 2xl:text-[52px] 3xl:text-[64px]  px-3 leading-[57px] lg:leading-relaxed xl:leading-[180%] 2xl:leading-[200%]">
+                  <!-- For Large screens from 768px -->
+                  <div class="big hidden md:block">
+                    <h1 class="text-[#FDEA02] overflow-y-hidden flex flex-col md:flex-row md:inline-flex space-x-3 lg:space-x-4"><span class="transform translate-y-28 md:translate-y-20">Humanizing </span> <span class="text-white transform translate-y-20"> technology</span></h1>
+                    <h1 class="flex flex-col space-x-3 overflow-y-hidden lg:space-x-4 md:flex-row md:inline-flex"><span class="text-white translate-y-28 md:translate-y-20"> through</span> <span class="text-white transform translate-y-20"> great</span> <span class="transform translate-y-20 text-[#FDEA02]">design.</span></h1>
+                  </div>
+
+                  <!-- For smaller screens  -->
+                  <div class="small md:hidden">
+                    <h1 class="text-[#FDEA02] overflow-y-hidden flex flex-col md:flex-row md:inline-flex space-x-3 lg:space-x-4"><span class="transform translate-y-28 md:translate-y-20">Humanizing </span> <span class="text-white transform translate-y-20"> technology</span></h1>
+                    <h1 class="flex flex-col space-x-3 overflow-y-hidden lg:space-x-4 md:flex-row md:inline-flex"><span class="text-white translate-y-28 md:translate-y-20"> through</span></h1>
+                    <h1 class="space-x-3 overflow-y-hidden lg:space-x-4 inline-flex"><span class="text-white transform translate-y-20"> great</span> <span class="transform translate-y-20 text-[#FDEA02]">design.</span></h1>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="right-container">
-              <div class="hidden navlist md:block">
-                <ul
-                  class="flex text-sm text-white font-montserrat xl:text-base 2xl:text-xl space-x-7 lg:space-x-10 xl:space-x-14 2xl:space-x-20"
-                >
-                  <li>
-                    <a
-                      href="#about"
-                      class="hover:text-[#FDEA02] transition duration-500"
-                      >About</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#work"
-                      class="hover:text-[#FDEA02] transition duration-500"
-                      >Work</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#articles"
-                      class="hover:text-[#FDEA02] transition duration-500"
-                      >Articles</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#contact"
-                      class="hover:text-[#FDEA02] transition duration-500"
-                      >Contact</a
-                    >
-                  </li>
-                </ul>
-              </div>
-
-              <button
-                class="menu-btn md:hidden space-y-1.5"
-                ref="menu"
-                @click="open"
-              >
-                <div class="relative middle"></div>
-              </button>
-            </div>
-          </div>
-        </nav>
-      </div>
-
-      <div
-        class="dropdown absolute md:hidden w-full h-[0] bg-black z-[2] flex justify-center items-center top-0 left-0 right-0 overflow-y-hidden"
-        ref="dropdown"
-      >
-        <div
-          class="flex flex-col items-center justify-center dropdown-container"
-        >
-          <ul
-            class="space-y-10 text-3xl font-light text-center text-white font-montserrat sm:text-4xl sm:space-y-12"
-          >
-            <li>
-              <a
-                href="#about"
-                class="hover:text-[#FDEA02] transition duration-500"
-                @click="close"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="#work"
-                class="hover:text-[#FDEA02] transition duration-500"
-                @click="close"
-                >Work</a
-              >
-            </li>
-            <li>
-              <a
-                href="#articles"
-                class="hover:text-[#FDEA02] transition duration-500"
-                @click="close"
-                >Articles</a
-              >
-            </li>
-            <li>
-              <a
-                href="#contact"
-                class="hover:text-[#FDEA02] transition duration-500"
-                @click="close"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div
-        class="container relative h-full sub-hero mx-auto px-7 sm:px-10 md:px-12 lg:px-16 z-[1]"
-      >
-        <div
-          class="hero-container w-full h-[80%] flex justify-center items-center text-center"
-        >
-          <div class="hero-text">
-            <h1
-              class="nue-bold text-[32px] lg:text-[2.5rem] xl:text-5xl 2xl:text-[52px] 3xl:text-[64px] text-white px-3 leading-[57px] lg:leading-relaxed xl:leading-[180%] 2xl:leading-[200%]"
-            >
-              <span class="text-[#FDEA02]">Humanizing</span> technology<br
-                class="hidden lg:block"
-              />
-              through great <br class="hidden sm:block lg:hidden" />
-              <span class="text-[#FDEA02]">design.</span>
-            </h1>
-          </div>
-        </div>
-
-        <div
-          class="mouse-scroll absolute bottom-[64px] lg:bottom-[32px] left-1/2 transform -translate-x-1/2"
-        >
-          <img class="w-16" src="Images/mouse-scroll.gif" alt="" />
-        </div>
-      </div>
-    </section>
-
-    <div
-      class="overflow-hidden noise"
-      style="background-image: url('Images/noise.png')"
-    >
-      <div class="container h-full mx-auto px-7 sm:px-10 md:px-12 lg:px-16">
-        <section class="about py-28 lg:py-32 xl:py-44 2xl:py-56" id="about">
-          <div class="w-full space-y-5 md:space-y-7 about-container">
-            <div class="image center">
-              <img
-                class="lg:hidden"
-                src="Images/small-person.png"
-                alt="An image of Emishio"
-              />
-
-              <!-- A bigger image for screen 1024 -->
-              <img
-                class="hidden lg:block"
-                src="Images/big-person.png"
-                alt="An image of Emishio"
-              />
-            </div>
-
-            <div class="text sm:px-14 lg:px-32 2xl:px-48">
-              <p
-                class="font-montserrat text-center text-sm lg:text-base xl:text-xl text-[#333333] leading-[35px] lg:leading-[35px] xl:leading-[44px] 2xl:leading-[44px]"
-              >
-                Hi I'm Emisho, a UI/UX Designer skilled in delivering unique
-                digital experiences through <br class="hidden xl:block" />
-                design that is fueled by empathy & driven by creative
-                storytelling. <br class="hidden xl:block" />
-                I'm also a huge nerd, wannabe video game critic and that one guy
-                who knows way <br class="hidden xl:block" />
-                too much random stuff. Here's some of my design work.
-              </p>
+            <div class="mouse-scroll absolute bottom-[64px] lg:bottom-[32px] left-1/2 transform -translate-x-1/2">
+              <img class="w-16 opacity-0" src="Images/mouse-scroll.gif" alt="" />
             </div>
           </div>
         </section>
 
-        <section
-          class="pb-32 featured-work lg:py-10 xl:py-16 2xl:py-20"
-          id="work"
+        <div
+          class="overflow-hidden noise"
+          style="background-image: url('Images/noise.png')"
         >
-          <div
-            class="relative space-y-10 sm:space-y-14 featured-work-container"
-          >
-            <div class="top-text">
-              <p
-                class="text-[28px] lg:text-4xl xl:text-5xl trans-text nue-bold"
-              >
-                Featured Work
-              </p>
-            </div>
+          <div class="container h-full mx-auto px-7 sm:px-10 md:px-12 lg:px-16">
+            <section class="about py-28 lg:py-32 xl:py-44 2xl:py-56" id="about">
+              <div class="w-full space-y-5 md:space-y-7 about-container">
+                <div class="image center">
+                  <img
+                    class="lg:hidden"
+                    src="Images/small-person.png"
+                    alt="An image of Emishio"
+                  />
 
-            <div class="relative bottom-projects">
-              <HoverLink
-                src="made-in-nigeria"
-                href="https://www.behance.net/gallery/138142449/Website-Redesign-for-Open-Source-Project"
-                alt="A cover image for Made In Nigeria"
-                class=""
-              >
-                <span class="nue-bold">Made in Nigeria:</span> Redesigning
-                Nigeria’s first open-source curation website for better
-                storytelling.
-              </HoverLink>
+                  <!-- A bigger image for screen 1024 -->
+                  <img
+                    class="hidden lg:block"
+                    src="Images/big-person.png"
+                    alt="An image of Emishio"
+                  />
+                </div>
 
-              <HoverLink
-                src="waybill"
-                href=""
-                alt="A cover image for Waybill"
-                class="waybill"
-              >
-                <span class="nue-bold">Waybill:</span> Building a secure &
-                unified platform for Nigerian logistics.
-                <span class="text-[#bbbbbb] lg:hidden">(Coming Soon...)</span>
-              </HoverLink>
-
-              <HoverLink
-                src="paymagic"
-                href="https://www.behance.net/gallery/138620915/Paymagic-UIUX-Design-for-Payment-App"
-                alt="A cover image for Paymagic"
-                class="paymagic"
-              >
-                <span class="nue-bold">Paymagic:</span> Crafting a lightweight
-                credit/payment product.
-              </HoverLink>
-
-              <div v-if="expanded" class="extendend-projects lg:hidden">
-                <HoverLink
-                  src="reality-os"
-                  href="https://twitter.com/Emishonowayi/status/1381674985459159040?s=20&t=7GoK3yXh-fzjZyJbwP-fow"
-                  alt="A cover image for Reality OS"
-                  class="reality-os"
-                >
-                  <span class="nue-bold">Reality OS:</span> Exploring Design
-                  Concepts for an Apple inspired VR/AR interface.
-                </HoverLink>
-
-                <HoverLink
-                  src="user-profile"
-                  href=""
-                  alt="A cover image for User Profile Plugin"
-                  class="user-profile"
-                >
-                  <span class="nue-bold">User Profile Plugin:</span>
-                  Redesigning a globally used design plugin for greater
-                  inclusivity.
-                  <span class="text-[#bbbbbb] lg:hidden">(Coming Soon...)</span>
-                </HoverLink>
+                <div class="text sm:px-14 lg:px-32 2xl:px-48">
+                  <p
+                    class="font-montserrat text-center text-sm lg:text-base xl:text-xl text-[#333333] leading-[35px] lg:leading-[35px] xl:leading-[44px] 2xl:leading-[44px]"
+                  >
+                    Hi I'm Emisho, a UI/UX Designer skilled in delivering unique
+                    digital experiences through <br class="hidden xl:block" />
+                    design that is fueled by empathy & driven by creative
+                    storytelling. <br class="hidden xl:block" />
+                    I'm also a huge nerd, wannabe video game critic and that one guy
+                    who knows way <br class="hidden xl:block" />
+                    too much random stuff. Here's some of my design work.
+                  </p>
+                </div>
               </div>
+            </section>
 
-              <div class="hidden lg:block">
-                <HoverLink
-                  src="reality-os"
-                  href="https://twitter.com/Emishonowayi/status/1381674985459159040?s=20&t=7GoK3yXh-fzjZyJbwP-fow"
-                  alt="A cover image for Reality OS"
-                  class="reality-os"
-                >
-                  <span class="nue-bold">Reality OS:</span> Exploring Design
-                  Concepts for an Apple inspired VR/AR interface.
-                </HoverLink>
-
-                <HoverLink
-                  src="user-profile"
-                  href=""
-                  alt="A cover image for User Profile Plugin"
-                  class="user-profile"
-                >
-                  <span class="nue-bold">User Profile Plugin:</span>
-                  Redesigning a globally used design plugin for greater
-                  inclusivity.
-                </HoverLink>
-              </div>
-
-              <div class="flex justify-center w-full lg:hidden">
-                <button
-                  class="expand text-sm font-montserrat text-[#333333] py-4 px-8 border-black border mt-4"
-                  @click="expand"
-                >
-                  {{ stats }} Projects
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section
-          class="pb-32 overflow-x-hidden articles lg:py-32 xl:py-60 2xl:py-60"
-          id="articles"
-        >
-          <div class="articles-container">
-            <div
-              class="flex items-center justify-between top-text-and-navigator"
+            <section
+              class="pb-32 featured-work lg:py-10 xl:py-16 2xl:py-20"
+              id="work"
             >
-              <p
-                class="text-[28px] lg:text-4xl xl:text-5xl trans-text-article nue-bold"
+              <div
+                class="relative space-y-10 sm:space-y-14 featured-work-container"
               >
-                Articles
-              </p>
-
-              <div class="flex mb-2 space-x-5 navigators lg:hidden">
-                <button class="left p-3.5" @click="moveLeft" ref="prev">
-                  <svg
-                    width="9"
-                    height="14"
-                    viewBox="0 0 9 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                <div class="top-text overflow-y-hidden">
+                  <p
+                    class="text-[28px] lg:text-4xl xl:text-5xl trans-text nue-bold"
                   >
-                    <path
-                      d="M8 13L2 7L8 1"
-                      stroke="#333333"
-                      stroke-width="1.5"
-                    />
-                  </svg>
-                </button>
+                    Featured Work
+                  </p>
+                </div>
 
-                <button class="right p-3.5" @click="moveRight" ref="next">
-                  <svg
-                    width="9"
-                    height="14"
-                    viewBox="0 0 9 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                <div class="relative bottom-projects">
+                  <HoverLink
+                    src="made-in-nigeria"
+                    href="https://www.behance.net/gallery/138142449/Website-Redesign-for-Open-Source-Project"
+                    alt="A cover image for Made In Nigeria"
+                    class=""
                   >
-                    <path
-                      d="M1 13L7 7L1 1"
-                      stroke="#333333"
-                      stroke-width="1.5"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
+                    <span class="nue-bold">Made in Nigeria:</span> Redesigning
+                    Nigeria’s first open-source curation website for better
+                    storytelling.
+                  </HoverLink>
 
-            <div class="mt-10 bottom lg:mt-16">
-              <div class="bottom-container" ref="move">
-                <client-only>
-                  <swiper
-                    class="flex pb-20 space-x-4 lg:space-x-8"
-                    ref="mySwiperRef"
-                    :options="swiperOptions"
+                  <HoverLink
+                    src="waybill"
+                    href=""
+                    alt="A cover image for Waybill"
+                    class="waybill"
                   >
-                    <swiper-slide
-                      v-for="article in articles"
-                      :key="article.id"
-                      class="article"
+                    <span class="nue-bold">Waybill:</span> Building a secure &
+                    unified platform for Nigerian logistics.
+                    <span class="text-[#bbbbbb] lg:hidden">(Coming Soon...)</span>
+                  </HoverLink>
+
+                  <HoverLink
+                    src="paymagic"
+                    href="https://www.behance.net/gallery/138620915/Paymagic-UIUX-Design-for-Payment-App"
+                    alt="A cover image for Paymagic"
+                    class="paymagic"
+                  >
+                    <span class="nue-bold">Paymagic:</span> Crafting a lightweight
+                    credit/payment product.
+                  </HoverLink>
+
+                  <div v-if="expanded" class="extendend-projects lg:hidden">
+                    <HoverLink
+                      src="reality-os"
+                      href="https://twitter.com/Emishonowayi/status/1381674985459159040?s=20&t=7GoK3yXh-fzjZyJbwP-fow"
+                      alt="A cover image for Reality OS"
+                      class="reality-os"
                     >
-                      <a :href="article.link" class="space-y-4">
-                        <div class="top">
-                          <img
-                            class="w-full"
-                            :src="article.src"
-                            :alt="article.alt"
-                          />
-                        </div>
+                      <span class="nue-bold">Reality OS:</span> Exploring Design
+                      Concepts for an Apple inspired VR/AR interface.
+                    </HoverLink>
 
-                        <div class="bottom">
-                          <p
-                            class="nue-bold text-[#333333] xl:text-xl xl:text-[#999999]"
-                          >
-                            {{ article.topic }}
-                            <span class="text-[#bbbbbb]">
-                              {{ article.span }}
-                            </span>
-                          </p>
-                        </div>
-                      </a>
-                    </swiper-slide>
-                  </swiper>
-                </client-only>
+                    <HoverLink
+                      src="user-profile"
+                      href=""
+                      alt="A cover image for User Profile Plugin"
+                      class="user-profile"
+                    >
+                      <span class="nue-bold">User Profile Plugin:</span>
+                      Redesigning a globally used design plugin for greater
+                      inclusivity.
+                      <span class="text-[#bbbbbb] lg:hidden">(Coming Soon...)</span>
+                    </HoverLink>
+                  </div>
 
+                  <div class="hidden lg:block">
+                    <HoverLink
+                      src="reality-os"
+                      href="https://twitter.com/Emishonowayi/status/1381674985459159040?s=20&t=7GoK3yXh-fzjZyJbwP-fow"
+                      alt="A cover image for Reality OS"
+                      class="reality-os"
+                    >
+                      <span class="nue-bold">Reality OS:</span> Exploring Design
+                      Concepts for an Apple inspired VR/AR interface.
+                    </HoverLink>
+
+                    <HoverLink
+                      src="user-profile"
+                      href=""
+                      alt="A cover image for User Profile Plugin"
+                      class="user-profile"
+                    >
+                      <span class="nue-bold">User Profile Plugin:</span>
+                      Redesigning a globally used design plugin for greater
+                      inclusivity.
+                    </HoverLink>
+                  </div>
+
+                  <div class="flex justify-center w-full lg:hidden">
+                    <button
+                      class="expand text-sm font-montserrat text-[#333333] py-4 px-8 border-black border mt-4"
+                      @click="expand"
+                    >
+                      {{ stats }} Projects
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="pb-32 overflow-x-hidden articles lg:py-32 xl:py-60 2xl:py-60"
+              id="articles"
+            >
+              <div class="articles-container">
                 <div
-                  class="mt-5 space-x-4 swiper-pagination lg:hidden"
-                  slot="pagination"
-                ></div>
+                  class="flex items-center justify-between top-text-and-navigator"
+                >
+                  <p
+                    class="text-[28px] lg:text-4xl xl:text-5xl trans-text-article nue-bold"
+                  >
+                    Articles
+                  </p>
+
+                  <div class="flex mb-2 space-x-5 navigators lg:hidden">
+                    <button class="left p-3.5" @click="moveLeft" ref="prev">
+                      <svg
+                        width="9"
+                        height="14"
+                        viewBox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 13L2 7L8 1"
+                          stroke="#333333"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                    </button>
+
+                    <button class="right p-3.5" @click="moveRight" ref="next">
+                      <svg
+                        width="9"
+                        height="14"
+                        viewBox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1 13L7 7L1 1"
+                          stroke="#333333"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="mt-10 bottom lg:mt-16">
+                  <div class="bottom-container" ref="move">
+                    <client-only>
+                      <swiper
+                        class="flex pb-20 space-x-4 lg:space-x-8"
+                        ref="mySwiperRef"
+                        :options="swiperOptions"
+                      >
+                        <swiper-slide
+                          v-for="article in articles"
+                          :key="article.id"
+                          class="article"
+                        >
+                          <a :href="article.link" target="blank" class="space-y-4">
+                            <div class="top">
+                              <img
+                                class="w-full"
+                                :src="article.src"
+                                :alt="article.alt"
+                              />
+                            </div>
+
+                            <div class="bottom">
+                              <p
+                                class="nue-bold text-[#333333] xl:text-xl xl:text-[#999999]"
+                              >
+                                {{ article.topic }}
+                                <span class="text-[#bbbbbb]">
+                                  {{ article.span }}
+                                </span>
+                              </p>
+                            </div>
+                          </a>
+                        </swiper-slide>
+                      </swiper>
+                    </client-only>
+
+                    <div
+                      class="mt-5 space-x-4 swiper-pagination lg:hidden"
+                      slot="pagination"
+                    ></div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-
-    <footer class="overflow-hidden bg-black" id="contact">
-      <div class="container mx-auto px-7 sm:px-10 md:px-12 lg:px-16">
-        <div
-          class="relative items-center justify-between py-10 2xl:justify-start xl:py-14 md:flex footer-container"
-        >
-          <div class="left-container md:w-1/2">
-            <div class="py-20 xl:py-28 main-footer">
-              <div class="texts">
-                <h2
-                  class="text-[28px] lg:text-4xl xl:text-5xl trans-text-connect nue-bold"
-                >
-                  Let's Connect
-                </h2>
-
-                <p
-                  class="text-white small-talk xl:text-xl font-montserrat leading-[28.8px] xl:leading-[180%] 2xl:leading-[200%] mt-5"
-                >
-                  For work, send me an email @ <br class="lg:hidden" />
-                  <span class="text-[#FDEA02]"
-                    ><a href="mailto: emishovictor@gmail.com"
-                      >emishovictor@gmail.com</a
-                    ></span
-                  >, or follow any of my other social accounts if you'd love to
-                  connect with me and see more of my Design explorations for
-                  Web, App, VR/AR, Gaming etc.
-                </p>
-
-                <ul
-                  class="flex items-center justify-between mt-8 xl:mt-16 text-base text-white xl:text-xl 2xl:text-2xl links nue-bold xl:w-[410px] 2xl:w-[500px]"
-                >
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/in/emisho-victor-126601175/"
-                      class="hover:text-[#FDEA02] transition duration-500"
-                      >LinkedIn</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://twitter.com/Emishonowayi"
-                      class="hover:text-[#FDEA02] transition duration-500"
-                      >Twitter</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.instagram.com/designbyemisho/"
-                      class="hover:text-[#FDEA02] transition duration-500"
-                      >Instagram</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="credits">
-              <h4
-                class="text-xs text-white xl:text-base 2xl:text-lg credits-texts font-montserrat"
-              >
-                Site designed by
-                <span class="text-[#FDEA02]"><a href="">me</a></span
-                >, developed by
-                <span class="text-[#FDEA02]"><a href="">Ganiyu Idris</a></span>
-              </h4>
-            </div>
-          </div>
-
-          <div class="hidden right-container md:block">
-            <img
-              class="absolute bottom-0 right-0 w-[250px] lg:w-[250px] xl:w-[300px] 2xl:w-[340px] xl:mr-20 2xl:mr-32"
-              src="Images/hand.png"
-              alt="A fisted hand with 2 pointed fingers"
-            />
+            </section>
           </div>
         </div>
+
+        <footer class="overflow-hidden bg-black" id="contact">
+          <div class="container mx-auto px-7 sm:px-10 md:px-12 lg:px-16">
+            <div
+              class="relative items-center justify-between py-10 2xl:justify-start xl:py-14 md:flex footer-container"
+            >
+              <div class="left-container md:w-1/2">
+                <div class="py-20 xl:py-28 main-footer">
+                  <div class="texts">
+                    <h2
+                      class="text-[28px] lg:text-4xl xl:text-5xl trans-text-connect nue-bold"
+                    >
+                      Let's Connect
+                    </h2>
+
+                    <p
+                      class="text-white small-talk xl:text-xl font-montserrat leading-[28.8px] xl:leading-[180%] 2xl:leading-[200%] mt-5"
+                    >
+                      For work, send me an email @ <br class="lg:hidden" />
+                      <span class="text-[#FDEA02]"
+                        ><a href="mailto: emishovictor@gmail.com"
+                          >emishovictor@gmail.com</a
+                        ></span
+                      >, or follow any of my other social accounts if you'd love to
+                      connect with me and see more of my Design explorations for
+                      Web, App, VR/AR, Gaming etc.
+                    </p>
+
+                    <ul
+                      class="flex items-center justify-between mt-8 xl:mt-16 text-base text-white xl:text-xl 2xl:text-2xl links nue-bold xl:w-[410px] 2xl:w-[500px]"
+                    >
+                      <li>
+                        <a
+                          href="https://www.linkedin.com/in/emisho-victor-126601175/"
+                          class="hover:text-[#FDEA02] transition duration-500"
+                          >LinkedIn</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://twitter.com/Emishonowayi"
+                          class="hover:text-[#FDEA02] transition duration-500"
+                          >Twitter</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://www.instagram.com/designbyemisho/"
+                          class="hover:text-[#FDEA02] transition duration-500"
+                          >Instagram</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="credits">
+                  <h4
+                    class="text-xs text-white xl:text-base 2xl:text-lg credits-texts font-montserrat"
+                  >
+                    Site designed by
+                    <span class="text-[#FDEA02]"><a href="">me</a></span
+                    >, developed by
+                    <span class="text-[#FDEA02]"><a href="https://www.linkedin.com/in/ganiyu-idris/">Ganiyu Idris</a></span>
+                  </h4>
+                </div>
+              </div>
+
+              <div class="hidden right-container md:block">
+                <img
+                  class="absolute bottom-0 right-0 w-[250px] lg:w-[250px] xl:w-[300px] 2xl:w-[340px] xl:mr-20 2xl:mr-32"
+                  src="Images/hand.png"
+                  alt="A fisted hand with 2 pointed fingers"
+                />
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
-    </footer>
+    <!-- </transition> -->
   </div>
 </template>
 
@@ -472,16 +414,12 @@ export default {
   name: "IndexPage",
   opened: "false",
 
-  // components: {
-  //   Carousel,
-  //   Slide
-  // },
-
   data() {
     return {
       expanded: false,
       stats: "Show All",
       lmS: null,
+      loaded: true,
 
       swiperOptions: {
         loop: true,
@@ -587,9 +525,38 @@ export default {
         this.stats = "Show All";
       }
     },
+
+    toggleLoader() {
+      setTimeout(() => {
+        this.loaded = true
+      }, 4000)
+    }
   },
 
   mounted() {
+    this.toggleLoader()
+
+    tl.to(".logo", {
+      y: 0,
+      delay: 1,
+    })
+
+    .to(".right-container .navlist ul li, .right-container button", {
+      y: 0,
+      opacity: 1,
+      stagger: 0.125
+    })
+
+    .to(".mouse-scroll img", {
+      opacity: 1
+    })
+    
+    .to(".hero-text div h1 span", {
+      y: 0,
+      stagger: 0.125,
+      delay: -1
+    })
+    
     // this.lmS = new this.locomotiveScroll({
     //   el: document.querySelector("#js-scroll"),
     //   smooth: true
@@ -605,6 +572,15 @@ export default {
 </script>
 
 <style lang="postcss">
+.fade-enter-active,
+.fade-leave-active {
+  transition: all .5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
 .swiper-conatiner {
   padding-bottom: 4rem;
 }
