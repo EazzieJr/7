@@ -3,6 +3,6 @@ import 'aos/dist/aos.css'
 
 export default {
     mounted() {
-        AOS.init({once:true})
+        AOS.init()
     }
 }

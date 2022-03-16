@@ -124,6 +124,7 @@
               >
                 <div class="top-text">
                   <p
+                    
                     class="text-[28px] lg:text-4xl xl:text-5xl trans-text nue-bold"
                   >
                     Featured Work
@@ -405,14 +406,16 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Cursor } from "~/animations/Cursor";
-import JellyEffect from "~/animations/jelly.js";
+// import JellyEffect from "~/animations/jelly.js";
 // import Scrollbar from "smooth-scrollbar";
+import aosMixin from "~/mixins/aos";
 gsap.registerPlugin(ScrollTrigger);
 const tl = gsap.timeline();
 
 export default {
   name: "IndexPage",
   opened: "false",
+  mixins: [aosMixin],
 
   data() {
     return {
@@ -661,6 +664,7 @@ body {
   color: transparent;
   display: unset;
   -webkit-text-stroke: 1px #333333;
+  z-index: 2;
 }
 
 .trans-text::before {
@@ -710,7 +714,7 @@ body {
   display: unset;
   -webkit-text-stroke: 1px black;
   z-index: 2;
-  mix-blend-mode: exclusion;
+  /* mix-blend-mode: exclusion; */
 }
 
 .trans-text-article::before {
@@ -741,7 +745,7 @@ body {
   background-color: #e4e4e4;
   top: 0;
   left: 0;
-  z-index: -2;
+  /* z-index: ; */
 }
 
 .work:last-child::after {

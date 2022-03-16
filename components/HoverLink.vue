@@ -57,8 +57,8 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.work {
-  mix-blend-mode: exclusion;
+.text {
+  mix-blend-mode: unset;
 }
 
 /* p:hover .hover-reveal{
