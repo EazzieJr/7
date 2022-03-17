@@ -57,8 +57,8 @@
                 <div class="nue-bold text-[32px] lg:text-[2.5rem] xl:text-5xl 2xl:text-[52px] 3xl:text-[64px]  px-3 leading-[57px] lg:leading-relaxed xl:leading-[180%] 2xl:leading-[200%]">
                   <!-- For Large screens from 768px -->
                   <div class="big hidden md:block">
-                    <h1 class="text-[#FDEA02] overflow-y-hidden flex flex-col md:flex-row md:inline-flex space-x-3 lg:space-x-4"><span class="transform translate-y-28 md:translate-y-20">Humanizing </span> <span class="text-white transform translate-y-20"> technology</span></h1>
-                    <h1 class="flex flex-col space-x-3 overflow-y-hidden lg:space-x-4 md:flex-row md:inline-flex"><span class="text-white translate-y-28 md:translate-y-20"> through</span> <span class="text-white transform translate-y-20"> great</span> <span class="transform translate-y-20 text-[#FDEA02]">design.</span></h1>
+                    <h1 class="text-[#FDEA02] overflow-y-hidden flex flex-col md:flex-row md:inline-flex space-x-3 lg:space-x-4"><span class="transform translate-y-28 md:translate-y-28">Humanizing </span> <span class="text-white transform translate-y-28"> technology</span></h1>
+                    <h1 class="flex flex-col space-x-3 overflow-y-hidden lg:space-x-4 md:flex-row md:inline-flex"><span class="text-white translate-y-28 md:translate-y-28"> through</span> <span class="text-white transform translate-y-28"> great</span> <span class="transform translate-y-28 text-[#FDEA02]">design.</span></h1>
                   </div>
 
                   <!-- For smaller screens  -->
@@ -533,7 +533,7 @@ export default {
       setTimeout(() => {
         this.animateHero()
         this.loaded = true
-      }, 4000)
+      }, 4500)
     },
 
     animateHero() {
@@ -549,7 +549,7 @@ export default {
       
       gsap.to(".hero-text div h1 span", {
         y: 0,
-        stagger: 0.125,
+        // stagger: 0.125,
         delay: 1
       })
     }
