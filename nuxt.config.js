@@ -55,7 +55,7 @@ export default {
     /* module options */
     families: {
       Montserrat: {
-        wght: [ 400, 700 ],
+        wght: [100, 200, 400, 700 ],
         ital: [ 700 ]
       }
     }

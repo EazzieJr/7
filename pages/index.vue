@@ -151,7 +151,7 @@
                   >
                     <span class="nue-bold">Waybill:</span> Building a secure &
                     unified platform for Nigerian logistics.
-                    <span class="text-[#bbbbbb] lg:hidden">(Coming Soon...)</span>
+                    <span class="text-[#bbbbbb]">(Coming Soon...)</span>
                   </HoverLink>
 
                   <HoverLink
@@ -184,7 +184,7 @@
                       <span class="nue-bold">User Profile Plugin:</span>
                       Redesigning a globally used design plugin for greater
                       inclusivity.
-                      <span class="text-[#bbbbbb] lg:hidden">(Coming Soon...)</span>
+                      <span class="text-[#bbbbbb]">(Coming Soon...)</span>
                     </HoverLink>
                   </div>
 
@@ -533,24 +533,24 @@ export default {
       setTimeout(() => {
         this.animateHero()
         this.loaded = true
-      }, 4500)
+      }, 4100)
     },
 
     animateHero() {
       gsap.to(".nav-container", {
         opacity: 1,
-        delay: 1,
+        delay: 1.5,
       })
 
       gsap.to(".mouse-scroll img", {
         opacity: 1,
-        delay: 2,
+        delay: 2.5,
       })
       
       gsap.to(".hero-text div h1 span", {
         y: 0,
         // stagger: 0.125,
-        delay: 1
+        delay: 1.5
       })
     }
   },
