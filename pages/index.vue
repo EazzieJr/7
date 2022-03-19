@@ -8,7 +8,7 @@
     
     <transition name="fade" appear>
       <div v-show="loaded">
-        <section class="relative w-full h-screen bg-center bg-no-repeat bg-cover bg-small-hero md:bg-big-hero hero">
+        <section class="relative w-full h-screen bg-center bg-no-repeat bg-cover bg-small-hero md:bg-big-hero hero opacity-0">
           <div class="container relative mx-auto px-7 sm:px-10 md:px-12 lg:px-16 z-[3]">
             <nav class="z-[4]">
               <div class="nav-container py-10 flex justify-between items-center z-[999] opacity-0" ref="navContainer">
@@ -42,8 +42,8 @@
 
           <div class="dropdown absolute md:hidden w-full h-[0] bg-black z-[2] flex justify-center items-center top-0 left-0 right-0 overflow-y-hidden" ref="dropdown">
             <div class="flex flex-col items-center justify-center dropdown-container">
-              <ul class="space-y-10 text-3xl text-center text-white font-montserrat sm:text-4xl sm:space-y-12">
-                <ListItem title="about" class="font-thin "/>
+              <ul class="space-y-10 text-3xl text-center text-white font-montserrat sm:text-4xl sm:space-y-12 font-light">
+                <ListItem title="about" />
                 <ListItem title="work" />
                 <ListItem title="articles" />
                 <ListItem title="contact" />
@@ -537,17 +537,25 @@ export default {
     },
 
     animateHero() {
+      gsap.to(".hero", {
+        duration: 1,
+        opacity: 1,
+        delay: .5,
+      })
       gsap.to(".nav-container", {
+        duration: 1,
         opacity: 1,
         delay: 1.5,
       })
 
       gsap.to(".mouse-scroll img", {
+        duration: 1,
         opacity: 1,
         delay: 2.5,
       })
       
       gsap.to(".hero-text div h1 span", {
+        duration: 1,
         y: 0,
         // stagger: 0.125,
         delay: 1.5
