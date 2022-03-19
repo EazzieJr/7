@@ -207,7 +207,7 @@
                     >
                       <span class="nue-bold">User Profile Plugin:</span>
                       Redesigning a globally used design plugin for greater
-                      inclusivity.
+                      inclusivity.<span class="text-[#bbbbbb]">(Coming Soon...)</span>
                     </HoverLink>
                   </div>
 

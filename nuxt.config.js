@@ -8,18 +8,22 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'emishio',
+    title: 'Emisho - UI/UX Designer',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'A UI/UX designer skilled in crafting clean and innovative design solutions for digital products & technologies' },
+      { hid: 'keywords', name: 'keywords', content: 'Emisho, emisho, Emishio, Emisho portfolio, UI/UX, Designer, Product designer' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/png', sizes: "32x32", href: '/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: "16x16", href: '/favicon-16x16.png' },
+      { rel: 'manifest', href: 'site.web</link>manifest' },
+      { rel: 'apple-touch-icon', type: 'image/png', href: '/apple-touch-icon.png' }
     ]
   },
 
