@@ -43,10 +43,10 @@
           <div class="dropdown absolute md:hidden w-full h-[0] bg-black z-[2] flex justify-center items-center top-0 left-0 right-0 overflow-y-hidden" ref="dropdown">
             <div class="flex flex-col items-center justify-center dropdown-container">
               <ul class="space-y-10 text-3xl text-center text-white font-montserrat sm:text-4xl sm:space-y-12 font-light">
-                <ListItem title="about" />
-                <ListItem title="work" />
-                <ListItem title="articles" />
-                <ListItem title="contact" />
+                <ListItem title="about" @click="close" />
+                <ListItem title="work" @click="close" />
+                <ListItem title="articles" @click="close" />
+                <ListItem title="contact" @click="close" />
               </ul>
             </div>
           </div>
