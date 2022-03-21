@@ -17,6 +17,10 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
       { hid: 'description', name: 'description', content: 'A UI/UX designer skilled in crafting clean and innovative design solutions for digital products & technologies' },
       { hid: 'keywords', name: 'keywords', content: 'Emisho, emisho, Emishio, Emisho portfolio, UI/UX, Designer, Product designer' },
+      { hid: 'og:title', name: 'og:title', content: 'Emisho Victor' },
+      { hid: 'og:image', name: 'og:image', content: '/og.png' },
+      { hid: 'og:type', name: 'og:type', content: 'website' },
+      { name: 'google-site-verification', content: 'UNP0R77T0lHsmbgXD8FHArpYew8WjXCsI8OWCoMpIlU' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
