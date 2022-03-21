@@ -85,15 +85,15 @@
             <section class="about py-28 lg:py-32 xl:py-44 2xl:py-56" id="about">
               <div class="w-full space-y-5 md:space-y-7 about-container">
                 <div class="image center">
-                  <img
+                  <!-- <img
                     class="lg:hidden"
                     src="Images/small-person.png"
                     alt="An image of Emishio"
                   />
 
-                  <!-- A bigger image for screen 1024 -->
+                  A bigger image for screen 1024 -->
                   <img
-                    class="hidden lg:block"
+                    class=""
                     src="Images/big-person.png"
                     alt="An image of Emishio"
                   />
@@ -103,13 +103,14 @@
                   <p
                     class="font-montserrat text-center text-sm lg:text-base xl:text-xl text-[#333333] leading-[35px] lg:leading-[35px] xl:leading-[44px] 2xl:leading-[44px]"
                   >
-                    Hi I'm Emisho, a UI/UX Designer skilled in delivering unique
-                    digital experiences through <br class="hidden xl:block" />
-                    design that is fueled by empathy & driven by creative
-                    storytelling. <br class="hidden xl:block" />
-                    I'm also a huge nerd, wannabe video game critic and that one guy
-                    who knows way <br class="hidden xl:block" />
-                    too much random stuff. Here's some of my design work.
+                    Hi I'm Emisho, a UI/UX & Product Designer skilled in delivering unique
+                    digital experiences through design that is fueled by empathy & driven by creative
+                    storytelling. <br class="hidden xl:block" />  I am also genuinely passionate about adding value to humanity through creative & innovative thinking in order to create simple digital solutions to complex human problems.
+
+                    <span class="mt-5">
+                      Away from design, I'm  a huge nerd, wannabe video game critic and that one guy
+                      who knows way too much random stuff. Here's some of my design work.
+                    </span>
                   </p>
                 </div>
               </div>

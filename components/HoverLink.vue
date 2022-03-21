@@ -22,9 +22,7 @@
         </div>
 
         <div class="text">
-          <p
-            class="nue-regular text-[#333333] leading-[200%] sm:text-center lg:text-left lg:text-lg xl:text-xl 2xl:text-2xl transition duration-500 z-50"
-          >
+          <p class="nue-regular text-[#333333] leading-[200%] sm:text-center lg:text-left lg:text-lg xl:text-xl 2xl:text-2xl transition duration-500 z-50">
             <slot> </slot>
           </p>
         </div>
