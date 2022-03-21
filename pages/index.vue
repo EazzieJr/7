@@ -105,11 +105,11 @@
                   >
                     Hi I'm Emisho, a UI/UX & Product Designer skilled in delivering unique
                     digital experiences through design that is fueled by empathy & driven by creative
-                    storytelling. <br class="hidden xl:block" />  I am also genuinely passionate about adding value to humanity through creative & innovative thinking in order to create simple digital solutions to complex human problems.
+                    storytelling. <br class="hidden xl:block" />  I am also genuinely passionate about adding value to humanity through creative & innovative thinking in order to create simple digital solutions to complex human problems. <br>
 
                     <span class="mt-5">
-                      Away from design, I'm  a huge nerd, wannabe video game critic and that one guy
-                      who knows way too much random stuff. Here's some of my design work.
+                      Away from design, I'm a huge nerd, wannabe video game critic and that one guy
+                      who knows way too much random stuff.
                     </span>
                   </p>
                 </div>
@@ -546,20 +546,20 @@ export default {
       gsap.to(".nav-container", {
         duration: 1,
         opacity: 1,
-        delay: 1.5,
+        delay: 1.3,
       })
 
       gsap.to(".mouse-scroll img", {
         duration: 1,
         opacity: 1,
-        delay: 2.5,
+        delay: 2.3,
       })
       
       gsap.to(".hero-text div h1 span", {
         duration: 1,
         y: 0,
         // stagger: 0.125,
-        delay: 1.5
+        delay: 1.3
       })
     }
   },
