@@ -17,12 +17,24 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
       { hid: 'description', name: 'description', content: 'A UI/UX designer skilled in crafting clean and innovative design solutions for digital products & technologies' },
       { hid: 'keywords', name: 'keywords', content: 'Emisho, emisho, Emishio, Emisho portfolio, UI/UX, Designer, Product designer' },
-      { hid: 'og:title', name: 'og:title', content: 'Emisho Victor' },
-      { hid: 'og:image', name: 'og:image', content: '/og.png' },
       { hid: 'og:type', name: 'og:type', content: 'website' },
+      { hid: 'og:title', name: 'og:title', content: 'Emisho Victor' },
+      { hid: 'og:url', name: 'og:url', content: "https://emishovictor.com" },
+      { hid: 'og:site_name', name: 'og:site_name', content: "Emisho Victor" },
+      { hid: 'og:image', name: 'og:image', content: "https://res.cloudinary.com/eazzie/image/upload/v1647943871/emishio/Bg_Elements_1_cas8ej.png" },
+      { hid: 'og:description', name: 'og:description', content: "A UI/UX designer skilled in crafting clean and innovative design solutions for digital products & technologies" },
+
+      { hid: 'twitter:site', name: 'twitter:site', content: "@emishonowayi" },
+      { hid: 'twitter:title', name: 'twitter:title', content: 'Emisho Victor' },
+      { hid: 'twitter:card', name: 'twitter:card', content: "summary_large_image" },
+      { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: "An image of the website" },
+      { hid: 'twitter:image', name: 'twitter:image', content: "https://res.cloudinary.com/eazzie/image/upload/v1647943871/emishio/Bg_Elements_1_cas8ej.png" },
+      { hid: 'twitter:description', name: 'twitter:description', content: "A UI/UX designer skilled in crafting clean and innovative design solutions for digital products & technologies" },
+
       { name: 'google-site-verification', content: 'UNP0R77T0lHsmbgXD8FHArpYew8WjXCsI8OWCoMpIlU' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
+    
     link: [
       { rel: 'icon', type: 'image/png', sizes: "32x32", href: '/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: "16x16", href: '/favicon-16x16.png' },
