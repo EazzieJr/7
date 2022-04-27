@@ -131,27 +131,15 @@
 
                 <div class="relative bottom-projects">
                   <HoverLink
-                    src="made-in-nigeria"
-                    href="https://www.behance.net/gallery/138142449/Website-Redesign-for-Open-Source-Project"
-                    alt="A cover image for Made In Nigeria"
-                    class=""
-                  >
-                    <span class="nue-bold">Made in Nigeria:</span> Redesigning
-                    Nigeria’s first open-source curation website for better
-                    storytelling.
-                  </HoverLink>
-
-                  <HoverLink
                     src="waybill"
-                    href=""
+                    href="https://www.behance.net/gallery/142497875/Waybill-Logistics-App-Dashboard-Design"
                     alt="A cover image for Waybill"
                     class="waybill"
                   >
                     <span class="nue-bold">Waybill:</span> Building a secure &
                     unified platform for Nigerian logistics.
-                    <span class="text-[#bbbbbb]">(Coming Soon...)</span>
                   </HoverLink>
-
+									
                   <HoverLink
                     src="paymagic"
                     href="https://www.behance.net/gallery/138620915/Paymagic-UIUX-Design-for-Payment-App"
@@ -160,6 +148,17 @@
                   >
                     <span class="nue-bold">Paymagic:</span> Crafting a lightweight
                     credit/payment product.
+                  </HoverLink>
+
+                  <HoverLink
+                    src="made-in-nigeria"
+                    href="https://www.behance.net/gallery/138142449/Website-Redesign-for-Open-Source-Project"
+                    alt="A cover image for Made In Nigeria"
+                    class=""
+                  >
+                    <span class="nue-bold">Made in Nigeria:</span> Redesigning
+                    Nigeria’s first open-source curation website for better
+                    storytelling.
                   </HoverLink>
 
                   <div v-if="expanded" class="extendend-projects lg:hidden">
