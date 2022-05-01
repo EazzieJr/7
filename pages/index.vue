@@ -2,25 +2,41 @@
   <div class="body">
     <transition name="fade" appear>
       <div v-show="!loaded" class="w-full h-screen bg-black preloader center">
-        <video class="w-60" src="videos/preloader.mp4" autoplay loop muted playsinline />
+        <video
+          class="w-60"
+          src="videos/preloader.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+        />
       </div>
     </transition>
-    
+
     <transition name="fade" appear>
       <div v-show="loaded">
-        <section class="relative w-full h-screen bg-center bg-no-repeat bg-cover bg-small-hero md:bg-big-hero hero opacity-0">
-          <div class="container relative mx-auto px-7 sm:px-10 md:px-12 lg:px-16 z-[3]">
+        <section
+          class="relative w-full h-screen bg-center bg-no-repeat bg-cover bg-small-hero md:bg-big-hero hero opacity-0"
+        >
+          <div
+            class="container relative mx-auto px-7 sm:px-10 md:px-12 lg:px-16 z-[3]"
+          >
             <nav class="z-[4]">
-              <div class="nav-container py-10 flex justify-between items-center z-[999] opacity-0" ref="navContainer">
+              <div
+                class="nav-container py-10 flex justify-between items-center z-[999] opacity-0"
+                ref="navContainer"
+              >
                 <div class="left-container">
                   <div class="">
-                    <Logo class="logo" ref="logo"/>
+                    <Logo class="logo" ref="logo" />
                   </div>
                 </div>
 
                 <div class="right-container">
                   <div class="hidden navlist md:block">
-                    <ul class="flex overflow-hidden text-sm text-white font-montserrat xl:text-base 2xl:text-xl space-x-7 lg:space-x-10 xl:space-x-14 2xl:space-x-20">
+                    <ul
+                      class="flex overflow-hidden text-sm text-white font-montserrat xl:text-base 2xl:text-xl space-x-7 lg:space-x-10 xl:space-x-14 2xl:space-x-20"
+                    >
                       <ListItem title="about" />
                       <ListItem title="work" />
                       <ListItem title="articles" />
@@ -40,9 +56,16 @@
             </nav>
           </div>
 
-          <div class="dropdown absolute md:hidden w-full h-[0] bg-black z-[2] flex justify-center items-center top-0 left-0 right-0 overflow-y-hidden" ref="dropdown">
-            <div class="flex flex-col items-center justify-center dropdown-container">
-              <ul class="space-y-10 text-3xl text-center text-white font-montserrat sm:text-4xl sm:space-y-12 font-light">
+          <div
+            class="dropdown absolute md:hidden w-full h-[0] bg-black z-[2] flex justify-center items-center top-0 left-0 right-0 overflow-y-hidden"
+            ref="dropdown"
+          >
+            <div
+              class="flex flex-col items-center justify-center dropdown-container"
+            >
+              <ul
+                class="space-y-10 text-3xl text-center text-white font-montserrat sm:text-4xl sm:space-y-12 font-light"
+              >
                 <ListItem title="about" @click="close" />
                 <ListItem title="work" @click="close" />
                 <ListItem title="articles" @click="close" />
@@ -51,33 +74,93 @@
             </div>
           </div>
 
-          <div class="container relative h-full sub-hero mx-auto px-7 sm:px-10 md:px-12 lg:px-16 z-[1]">
-            <div class="hero-container w-full h-[80%] flex justify-center items-center text-center">
+          <div
+            class="container relative h-full sub-hero mx-auto px-7 sm:px-10 md:px-12 lg:px-16 z-[1]"
+          >
+            <div
+              class="hero-container w-full h-[80%] flex justify-center items-center text-center"
+            >
               <div class="hero-text">
-                <div class="nue-bold text-[32px] lg:text-[2.5rem] xl:text-5xl 2xl:text-[52px] 3xl:text-[64px]  px-3 leading-[57px] lg:leading-relaxed xl:leading-[180%] 2xl:leading-[200%]">
+                <div
+                  class="nue-bold text-[32px] lg:text-[2.5rem] xl:text-5xl 2xl:text-[52px] 3xl:text-[64px] px-3 leading-[57px] lg:leading-relaxed xl:leading-[180%] 2xl:leading-[200%]"
+                >
                   <!-- For Large screens from 768px -->
                   <div class="big hidden md:block">
-                    <h1 class="text-[#FDEA02] overflow-y-hidden flex flex-col md:flex-row md:inline-flex space-x-3 lg:space-x-4"><span class="transform translate-y-28 md:translate-y-28">Humanizing </span> <span class="text-white transform translate-y-28"> technology</span></h1>
-                    <h1 class="flex flex-col space-x-3 overflow-y-hidden lg:space-x-4 md:flex-row md:inline-flex"><span class="text-white translate-y-28 md:translate-y-28"> through</span> <span class="text-white transform translate-y-28"> great</span> <span class="transform translate-y-28 text-[#FDEA02]">design.</span></h1>
+                    <h1
+                      class="text-[#FDEA02] overflow-y-hidden flex flex-col md:flex-row md:inline-flex space-x-3 lg:space-x-4"
+                    >
+                      <span class="transform translate-y-28 md:translate-y-28"
+                        >Humanizing
+                      </span>
+                      <span class="text-white transform translate-y-28">
+                        technology</span
+                      >
+                    </h1>
+                    <h1
+                      class="flex flex-col space-x-3 overflow-y-hidden lg:space-x-4 md:flex-row md:inline-flex"
+                    >
+                      <span class="text-white translate-y-28 md:translate-y-28">
+                        through</span
+                      >
+                      <span class="text-white transform translate-y-28">
+                        great</span
+                      >
+                      <span class="transform translate-y-28 text-[#FDEA02]"
+                        >design.</span
+                      >
+                    </h1>
                   </div>
 
                   <!-- For smaller screens  -->
                   <div class="small md:hidden">
-                    <h1 class="text-[#FDEA02] overflow-y-hidden flex flex-col md:flex-row md:inline-flex space-x-3 lg:space-x-4"><span class="transform translate-y-28 md:translate-y-20">Humanizing </span> <span class="text-white transform translate-y-20"> technology</span></h1>
-                    <h1 class="flex flex-col space-x-3 overflow-y-hidden lg:space-x-4 md:flex-row md:inline-flex"><span class="text-white translate-y-28 md:translate-y-20"> through</span></h1>
-                    <h1 class="space-x-3 overflow-y-hidden lg:space-x-4 inline-flex"><span class="text-white transform translate-y-20"> great</span> <span class="transform translate-y-20 text-[#FDEA02]">design.</span></h1>
+                    <h1
+                      class="text-[#FDEA02] overflow-y-hidden flex flex-col md:flex-row md:inline-flex space-x-3 lg:space-x-4"
+                    >
+                      <span class="transform translate-y-28 md:translate-y-20"
+                        >Humanizing
+                      </span>
+                      <span class="text-white transform translate-y-20">
+                        technology</span
+                      >
+                    </h1>
+                    <h1
+                      class="flex flex-col space-x-3 overflow-y-hidden lg:space-x-4 md:flex-row md:inline-flex"
+                    >
+                      <span class="text-white translate-y-28 md:translate-y-20">
+                        through</span
+                      >
+                    </h1>
+                    <h1
+                      class="space-x-3 overflow-y-hidden lg:space-x-4 inline-flex"
+                    >
+                      <span class="text-white transform translate-y-20">
+                        great</span
+                      >
+                      <span class="transform translate-y-20 text-[#FDEA02]"
+                        >design.</span
+                      >
+                    </h1>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="mouse-scroll absolute bottom-[64px] lg:bottom-[32px] left-1/2 transform -translate-x-1/2">
-              <img class="w-16 opacity-0" src="Images/mouse-scroll.gif" alt="" />
+            <div
+              class="mouse-scroll absolute bottom-[64px] lg:bottom-[32px] left-1/2 transform -translate-x-1/2"
+            >
+              <img
+                class="w-16 opacity-0"
+                src="Images/mouse-scroll.gif"
+                alt=""
+              />
             </div>
           </div>
         </section>
 
-        <div class="overflow-hidden noise bg-white" style="background-image: url('Images/noise.png')" >
+        <div
+          class="overflow-hidden noise bg-white"
+          style="background-image: url('Images/noise.png')"
+        >
           <div class="container h-full mx-auto px-7 sm:px-10 md:px-12 lg:px-16">
             <section class="about py-28 lg:py-32 xl:py-44 2xl:py-56" id="about">
               <div class="w-full space-y-5 md:space-y-7 about-container">
@@ -100,13 +183,19 @@
                   <p
                     class="font-montserrat text-center text-sm lg:text-base xl:text-xl text-[#333333] leading-[35px] lg:leading-[35px] xl:leading-[44px] 2xl:leading-[44px]"
                   >
-                    Hi I'm Emisho, a UI/UX & Product Designer skilled in delivering unique
-                    digital experiences through design that is fueled by empathy & driven by creative
-                    storytelling. <br class="hidden xl:block" />  I am also genuinely passionate about adding value to humanity through creative & innovative thinking in order to create simple digital solutions to complex human problems. <br>
+                    Hi I'm Emisho, a UI/UX & Product Designer skilled in
+                    delivering unique digital experiences through design that is
+                    fueled by empathy & driven by creative storytelling.
+                    <br class="hidden xl:block" />
+                    I am also genuinely passionate about adding value to
+                    humanity through creative & innovative thinking in order to
+                    create simple digital solutions to complex human problems.
+                    <br />
 
                     <span class="mt-5">
-                      Away from design, I'm a huge nerd, wannabe video game critic and that one guy
-                      who knows way too much random stuff.
+                      Away from design, I'm a huge nerd, wannabe video game
+                      critic and that one guy who knows way too much random
+                      stuff.
                     </span>
                   </p>
                 </div>
@@ -122,7 +211,6 @@
               >
                 <div class="top-text">
                   <p
-                    
                     class="text-[28px] lg:text-4xl xl:text-5xl trans-text nue-bold"
                   >
                     Featured Work
@@ -139,15 +227,15 @@
                     <span class="nue-bold">Waybill:</span> Building a secure &
                     unified platform for Nigerian logistics.
                   </HoverLink>
-									
+
                   <HoverLink
                     src="paymagic"
                     href="https://www.behance.net/gallery/138620915/Paymagic-UIUX-Design-for-Payment-App"
                     alt="A cover image for Paymagic"
                     class="paymagic"
                   >
-                    <span class="nue-bold">Paymagic:</span> Crafting a lightweight
-                    credit/payment product.
+                    <span class="nue-bold">Paymagic:</span> Crafting a
+                    lightweight credit/payment product.
                   </HoverLink>
 
                   <HoverLink
@@ -204,7 +292,9 @@
                     >
                       <span class="nue-bold">User Profile Plugin:</span>
                       Redesigning a globally used design plugin for greater
-                      inclusivity.<span class="text-[#bbbbbb]">(Coming Soon...)</span>
+                      inclusivity.<span class="text-[#bbbbbb]"
+                        >(Coming Soon...)</span
+                      >
                     </HoverLink>
                   </div>
 
@@ -282,7 +372,11 @@
                           :key="article.id"
                           class="article"
                         >
-                          <a :href="article.link" target="blank" class="space-y-4">
+                          <a
+                            :href="article.link"
+                            target="blank"
+                            class="space-y-4"
+                          >
                             <div class="top">
                               <img
                                 class="w-full"
@@ -339,9 +433,9 @@
                         ><a href="mailto: emishovictor@gmail.com"
                           >emishovictor@gmail.com</a
                         ></span
-                      >, or follow any of my other social accounts if you'd love to
-                      connect with me and see more of my Design explorations for
-                      Web, App, VR/AR, Gaming etc.
+                      >, or follow any of my other social accounts if you'd love
+                      to connect with me and see more of my Design explorations
+                      for Web, App, VR/AR, Gaming etc.
                     </p>
 
                     <ul
@@ -379,7 +473,11 @@
                     Site designed by
                     <span class="text-[#FDEA02]"><a href="">me</a></span
                     >, developed by
-                    <span class="text-[#FDEA02]"><a href="https://www.linkedin.com/in/ganiyu-idris/">Ganiyu Idris</a></span>
+                    <span class="text-[#FDEA02]"
+                      ><a href="https://www.linkedin.com/in/ganiyu-idris/"
+                        >Ganiyu Idris</a
+                      ></span
+                    >
                   </h4>
                 </div>
               </div>
@@ -528,43 +626,41 @@ export default {
 
     toggleLoader() {
       setTimeout(() => {
-        this.animateHero()
-        this.loaded = true
-      }, 4100)
+        this.animateHero();
+        this.loaded = true;
+      }, 4100);
     },
 
     animateHero() {
       gsap.to(".hero", {
         duration: 1,
         opacity: 1,
-        delay: .5,
-      })
+        delay: 0.5,
+      });
       gsap.to(".nav-container", {
         duration: 1,
         opacity: 1,
         delay: 1.3,
-      })
+      });
 
       gsap.to(".mouse-scroll img", {
         duration: 1,
         opacity: 1,
         delay: 2.3,
-      })
-      
+      });
+
       gsap.to(".hero-text div h1 span", {
         duration: 1,
         y: 0,
         // stagger: 0.125,
-        delay: 1.3
-      })
-    }
+        delay: 1.3,
+      });
+    },
   },
 
   mounted() {
-    this.toggleLoader()
+    this.toggleLoader();
 
-    
-    
     // this.lmS = new this.locomotiveScroll({
     //   el: document.querySelector("#js-scroll"),
     //   smooth: true
@@ -585,7 +681,7 @@ body {
 }
 .fade-enter-active,
 .fade-leave-active {
-  transition: all .5s;
+  transition: all 0.5s;
 }
 .fade-enter,
 .fade-leave-to {

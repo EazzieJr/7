@@ -65,7 +65,6 @@ export default {
     // Google fonts
     '@nuxtjs/google-fonts',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
     '@nuxt/postcss8',
     // Font awesome
     // '@nuxtjs/fontawesome'
