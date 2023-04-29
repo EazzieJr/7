@@ -877,11 +877,6 @@ body {
   @apply hidden lg:block;
 }
 
-/* All */
-* {
-  scroll-behavior: smooth;
-}
-
 /* Scrollbar */
 body::-webkit-scrollbar {
   width: 5px;
