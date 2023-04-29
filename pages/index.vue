@@ -37,10 +37,10 @@
                     <ul
                       class="flex overflow-hidden text-sm text-white font-montserrat xl:text-base 2xl:text-xl space-x-7 lg:space-x-10 xl:space-x-14 2xl:space-x-20"
                     >
-                      <ListItem title="about" />
-                      <ListItem title="work" />
-                      <ListItem title="articles" />
-                      <ListItem title="contact" />
+                      <ListItem title="about" @click="lenis.scrollTo('#about')"/>
+                      <ListItem title="work" @click="lenis.scrollTo('#work')"/>
+                      <ListItem title="articles" @click="lenis.scrollTo('#articles')"/>
+                      <ListItem title="contact" @click="lenis.scrollTo('#contact')"/>
                     </ul>
                   </div>
 
@@ -501,8 +501,8 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Cursor } from "~/animations/Cursor";
-// import JellyEffect from "~/animations/jelly.js";
-// import Scrollbar from "smooth-scrollbar";
+import Lenis from '@studio-freight/lenis'
+
 import aosMixin from "~/mixins/aos";
 gsap.registerPlugin(ScrollTrigger);
 const tl = gsap.timeline();
@@ -571,6 +571,8 @@ export default {
           span: " (Coming soon)",
         },
       ],
+
+      lenis: null,
     };
   },
 
@@ -660,6 +662,21 @@ export default {
 
   mounted() {
     this.toggleLoader();
+
+    this.lenis = new Lenis({
+      // infinite: true
+    })
+
+    this.lenis.on('scroll', (e) => {
+      // console.log(e)
+    })
+
+    const raf = (time) => {
+      this.lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
 
     // this.lmS = new this.locomotiveScroll({
     //   el: document.querySelector("#js-scroll"),

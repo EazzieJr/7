@@ -1,18 +1,21 @@
 <template>
-  <div>
-      <li class="">
-        <a
-            :href="`#${title}`"
-            class="hover:text-[#FDEA02] transition duration-500 capitalize"
-            >{{ title }}</a
-        >
-        </li>
-  </div>
+  <li class="">
+    <button @click="click"
+      class="hover:text-[#FDEA02] transition duration-500 capitalize"
+      >{{ title }}
+    </button>
+  </li>
 </template>
 
 <script>
 export default {
-    props: ['title']
+  props: ['title'],
+
+  methods: {
+    click() {
+      this.$emit('click')
+    }
+  }
 }
 </script>
 
