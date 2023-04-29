@@ -66,10 +66,10 @@
               <ul
                 class="space-y-10 text-3xl text-center text-white font-montserrat sm:text-4xl sm:space-y-12 font-light"
               >
-                <ListItem title="about" @click="close" />
-                <ListItem title="work" @click="close" />
-                <ListItem title="articles" @click="close" />
-                <ListItem title="contact" @click="close" />
+                <ListItem title="about" @click="close('#about')" />
+                <ListItem title="work" @click="close('#work')" />
+                <ListItem title="articles" @click="close('#articles')" />
+                <ListItem title="contact" @click="close('#contact')" />
               </ul>
             </div>
           </div>
@@ -589,10 +589,12 @@ export default {
       }
     },
 
-    close() {
+    close(des) {
       this.$refs.menu.classList.remove("open");
       this.$refs.dropdown.classList.remove("open");
       this.opened = !this.opened;
+
+      this.lenis.scrollTo(des);
     },
 
     moveLeft() {
