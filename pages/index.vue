@@ -418,14 +418,12 @@
                     <p
                       class="text-white small-talk xl:text-xl font-montserrat leading-[28.8px] xl:leading-[180%] 2xl:leading-[200%] mt-5"
                     >
-                      For work, send me an email @ <br class="lg:hidden" />
+                      For work inquires, send me an email @ <br class="lg:hidden" />
                       <span class="text-[#FDEA02]"
                         ><a href="mailto: emishovictor@gmail.com"
                           >emishovictor@gmail.com</a
                         ></span
-                      >, or follow any of my other social accounts if you'd love
-                      to connect with me and see more of my Design explorations
-                      for Web, App, VR/AR, Gaming etc.
+                      >, or connect with me on any of my other social accounts to see more of my regular design explorations.
                     </p>
 
                     <ul
