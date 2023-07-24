@@ -219,6 +219,15 @@
                   </HoverLink>
 
                   <HoverLink
+                      src="pagechap"
+                      href="https://www.behance.net/gallery/144175339/Pagechap-A-One-Link-Creation-Platform"
+                      alt="A cover image for Pagechap"
+                      class=""
+                    >
+                      <span class="nue-bold">Pagechap:</span> A one-link portfolio platform designed & built for creatives
+                  </HoverLink>
+
+                  <HoverLink
                     src="paymagic"
                     href="https://www.behance.net/gallery/138620915/Paymagic-UIUX-Design-for-Payment-App"
                     alt="A cover image for Paymagic"
@@ -228,18 +237,18 @@
                     lightweight credit/payment product.
                   </HoverLink>
 
-                  <HoverLink
-                    src="made-in-nigeria"
-                    href="https://www.behance.net/gallery/138142449/Website-Redesign-for-Open-Source-Project"
-                    alt="A cover image for Made In Nigeria"
-                    class=""
-                  >
-                    <span class="nue-bold">Made in Nigeria:</span> Redesigning
-                    Nigeria’s first open-source curation website for better
-                    storytelling.
-                  </HoverLink>
-
                   <div v-if="expanded" class="extendend-projects lg:hidden">
+                    <HoverLink
+                      src="made-in-nigeria"
+                      href="https://www.behance.net/gallery/138142449/Website-Redesign-for-Open-Source-Project"
+                      alt="A cover image for Made In Nigeria"
+                      class=""
+                    >
+                      <span class="nue-bold">Made in Nigeria:</span> Redesigning
+                      Nigeria’s first open-source curation website for better
+                      storytelling.
+                    </HoverLink>
+                    
                     <HoverLink
                       src="reality-os"
                       href="https://twitter.com/Emishonowayi/status/1381674985459159040?s=20&t=7GoK3yXh-fzjZyJbwP-fow"
