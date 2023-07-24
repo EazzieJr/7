@@ -1,6 +1,6 @@
 <template id="js-scroll">
   <div class="body">
-    <transition name="fade" appear>
+    <!-- <transition name="fade" appear>
       <div v-show="!loaded" class="w-full h-screen bg-black preloader center">
         <video
           class="w-60"
@@ -11,10 +11,11 @@
           playsinline
         />
       </div>
-    </transition>
+    </transition> -->
 
     <transition name="fade" appear>
-      <div v-show="loaded">
+      <!-- <div v-show="loaded"> -->
+      <div >
         <section
           class="relative w-full h-screen bg-center bg-no-repeat bg-cover bg-small-hero md:bg-big-hero hero opacity-0"
         >
@@ -173,30 +174,19 @@
 
                   A bigger image for screen 1024 -->
                   <img
-                    class=""
+                    class="max-w-[400px] lg:max-w-none"
                     src="Images/big-person.png"
                     alt="An image of Emishio"
                   />
                 </div>
 
-                <div class="text sm:px-14 lg:px-32 2xl:px-48">
+                <div class="text max-w-[500px] lg:max-w-[700px] xl:max-w-[840px] mx-auto">
                   <p
-                    class="font-montserrat text-center text-sm lg:text-base xl:text-xl text-[#333333] leading-[35px] lg:leading-[35px] xl:leading-[44px] 2xl:leading-[44px]"
+                    class="font-montserrat text-sm lg:text-base xl:text-xl text-[#333333] leading-[35px] lg:leading-[35px] xl:leading-[44px] 2xl:leading-[44px]"
                   >
-                    Hi I'm Emisho, a UI/UX & Product Designer skilled in
-                    delivering unique digital experiences through design that is
-                    fueled by empathy & driven by creative storytelling.
-                    <br class="hidden xl:block" />
-                    I am also genuinely passionate about adding value to
-                    humanity through creative & innovative thinking in order to
-                    create simple digital solutions to complex human problems.
-                    <br />
-
-                    <span class="mt-5">
-                      Away from design, I'm a huge nerd, wannabe video game
-                      critic and that one guy who knows way too much random
-                      stuff.
-                    </span>
+                    Hi I'm Emisho, a UI/UX & Product Designer skilled in delivering unique digital experiences through design that is fuelled by empathy & driven by creative storytelling. I am also genuinely passionate about adding value to humanity through creative & innovative thinking in order to create simple digital solutions to complex human problems. 
+                    <br>
+                    Away from design, I'm a huge nerd, wannabe video game critic and that one guy who knows way too much random stuff.
                   </p>
                 </div>
               </div>
