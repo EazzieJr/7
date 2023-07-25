@@ -1,6 +1,6 @@
 <template id="js-scroll">
   <div class="body">
-    <!-- <transition name="fade" appear>
+    <transition name="fade" appear>
       <div v-show="!loaded" class="w-full h-screen bg-black preloader center">
         <video
           class="w-60"
@@ -11,11 +11,10 @@
           playsinline
         />
       </div>
-    </transition> -->
+    </transition>
 
     <transition name="fade" appear>
-      <!-- <div v-show="loaded"> -->
-      <div >
+      <div v-show="loaded">
         <section
           class="relative w-full h-screen bg-center bg-no-repeat bg-cover bg-small-hero md:bg-big-hero hero opacity-0"
         >
