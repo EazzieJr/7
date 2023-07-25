@@ -162,7 +162,7 @@
           class="overflow-hidden noise bg-white"
           style="background-image: url('Images/noise.png')"
         >
-          <div class="container h-full mx-auto px-7 sm:px-10 md:px-12 lg:px-16">
+          <div class="container h-full mx-auto px-6 sm:px-10 md:px-12 lg:px-16">
             <section class="about py-28 lg:py-32 xl:py-44 2xl:py-56" id="about">
               <div class="w-full space-y-5 md:space-y-7 about-container">
                 <div class="image center">
@@ -174,7 +174,7 @@
 
                   A bigger image for screen 1024 -->
                   <img
-                    class="max-w-[400px] lg:max-w-none"
+                    class=""
                     src="Images/big-person.png"
                     alt="An image of Emishio"
                   />
