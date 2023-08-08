@@ -178,7 +178,7 @@
                   </h4>
                   
                   <p
-                    class="font-montserrat text-sm lg:text-base xl:text-xl 2xl:text-2xl text-[#333333] !leading-[180%]"
+                    class="font-montserrat text-sm lg:text-base xl:text-xl 2xl:text-2xl text-[#333333] leading-[220%] !lg:leading-[180%]"
                   >
                     Hi, I'm Emisho Victor, a UI/Ux, Product & Creative Designer with four years of professional experience. I currently work as the Founding Product Designer at <a class="underline font-bold" href="https://plumter.com/" target="blank"> Plumter Inc.</a> where I've single-handedly been helping build products & infrastructure that power international payments for thousands of businesses. 
                     <br>
