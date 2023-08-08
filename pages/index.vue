@@ -19,7 +19,7 @@
           class="relative w-full h-screen bg-center bg-no-repeat bg-cover bg-small-hero md:bg-big-hero hero opacity-0"
         >
           <div
-            class="container relative mx-auto px-7 sm:px-10 md:px-12 lg:px-16 z-[3]"
+            class="container relative mx-auto px-7 sm:px-10 md:px-12 lg:px-10 2xl:px-40 z-[3]"
           >
             <nav class="z-[4]">
               <div
@@ -75,7 +75,7 @@
           </div>
 
           <div
-            class="container relative h-full sub-hero mx-auto px-7 sm:px-10 md:px-12 lg:px-16 z-[1]"
+            class="container relative h-full sub-hero mx-auto px-7 sm:px-10 md:px-12 lg:px-10 2xl:px-40 z-[1]"
           >
             <div
               class="hero-container w-full h-[80%] flex justify-center items-center text-center"
@@ -161,31 +161,30 @@
           class="overflow-hidden noise bg-white"
           style="background-image: url('Images/noise.png')"
         >
-          <div class="container h-full mx-auto px-6 sm:px-10 md:px-12 lg:px-16">
+          <div class="container h-full mx-auto px-6 sm:px-10 md:px-12 lg:px-10 2xl:px-40">
             <section class="about py-28 lg:py-32 xl:py-44 2xl:py-56" id="about">
-              <div class="w-full space-y-5 md:space-y-7 about-container">
-                <div class="image center">
-                  <!-- <img
-                    class="lg:hidden"
-                    src="Images/small-person.png"
-                    alt="An image of Emishio"
-                  />
-
-                  A bigger image for screen 1024 -->
+              <div class="w-full space-y-5 md:space-y-7 lg:space-y-0 lg:space-x-10 xl:space-x-14 2xl:space-x-24 about-container lg:flex justify-between items-center">
+                <div class="image center w-full lg:max-w-[50%] xl:h-[512px] 2xl:h-[600px] overflow-hidden">
                   <img
-                    class=""
+                    class="lg:object-center lg:object-cover lg:w-full lg:h-full"
                     src="Images/big-person.png"
                     alt="An image of Emishio"
                   />
                 </div>
 
-                <div class="text max-w-[500px] lg:max-w-[700px] xl:max-w-[840px] mx-auto">
+                <div class="text w-full max-w-[500px] lg:max-w-[50%] mx-auto space-y-3">
+                  <h4 class="text-[28px] lg:text-4xl xl:text-5xl trans-text nue-bold">
+                    About me
+                  </h4>
+                  
                   <p
-                    class="font-montserrat text-sm lg:text-base xl:text-xl text-[#333333] leading-[35px] lg:leading-[35px] xl:leading-[44px] 2xl:leading-[44px]"
+                    class="font-montserrat text-sm lg:text-base xl:text-xl 2xl:text-2xl text-[#333333] !leading-[180%]"
                   >
-                    Hi I'm Emisho, a UI/UX & Product Designer skilled in delivering unique digital experiences through design that is fuelled by empathy & driven by creative storytelling. I am also genuinely passionate about adding value to humanity through creative & innovative thinking in order to create simple digital solutions to complex human problems. 
+                    Hi, I'm Emisho Victor, a UI/Ux, Product & Creative Designer with four years of professional experience. I currently work as the Founding Product Designer at <a class="underline font-bold" href="https://plumter.com/" target="blank"> Plumter Inc.</a> where I've single-handedly been helping build products & infrastructure that power international payments for thousands of businesses. 
                     <br>
-                    Away from design, I'm a huge nerd, wannabe video game critic and that one guy who knows way too much random stuff.
+                    I also regularly dabble into Creative Web Design & Animation, 3D Design, etc, and share my explorations on <a class="underline font-bold" href="https://layers.to/emisho" target="blank">Layers.to</a> & on <a class="underline font-bold" href="https://www.youtube.com/@EmishoVictor/videos" target="blank">Youtube.</a>
+                    <br>
+                    Away from design, I'm a huge nerd, music lover, wannabe video game critic, and that one guy who knows wayyy too much random stuff.
                   </p>
                 </div>
               </div>
@@ -453,9 +452,23 @@
                       </li>
                       <li>
                         <a
-                          href="https://www.instagram.com/designbyemisho/"
+                            href="https://www.youtube.com/@EmishoVictor/videos"
+                            class="hover:text-[#FDEA02] transition duration-500"
+                            >Youtube</a
+                          >
+                      </li>
+                      <li>
+                        <a
+                            href="https://www.instagram.com/designbyemisho/"
+                            class="hover:text-[#FDEA02] transition duration-500"
+                            >Instagram</a
+                          >
+                      </li>
+                      <li>
+                        <a
+                          href="https://layers.to/emisho"
                           class="hover:text-[#FDEA02] transition duration-500"
-                          >Instagram</a
+                          >Layers.to</a
                         >
                       </li>
                     </ul>
@@ -775,7 +788,7 @@ body {
   align-items: center;
 }
 
-.trans-text {
+.trans-text, .About-header {
   position: relative;
   color: transparent;
   display: unset;
@@ -783,7 +796,7 @@ body {
   z-index: 2;
 }
 
-.trans-text::before {
+.trans-text::before{
   content: "";
   position: absolute;
   width: 24px;
