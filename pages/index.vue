@@ -172,7 +172,7 @@
                   />
                 </div>
 
-                <div class="text w-full max-w-[500px] lg:max-w-[50%] mx-auto space-y-3">
+                <div class="text w-full max-w-[500px] lg:max-w-[50%] mx-auto space-y-2 lg:space-y-3">
                   <h4 class="text-[28px] lg:text-4xl xl:text-5xl trans-text nue-bold">
                     About me
                   </h4>
