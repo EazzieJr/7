@@ -409,7 +409,7 @@
         </div>
 
         <footer class="overflow-hidden bg-black" id="contact">
-          <div class="container mx-auto px-7 sm:px-10 md:px-12 lg:px-16">
+          <div class="container mx-auto px-7 sm:px-10 md:px-12 lg:px-10 2xl:px-40">
             <div
               class="relative items-center justify-between py-10 2xl:justify-start xl:py-14 md:flex footer-container"
             >
@@ -433,45 +433,43 @@
                       >, or connect with me on any of my other social accounts to see more of my regular design explorations.
                     </p>
 
-                    <ul
-                      class="flex items-center justify-between mt-8 xl:mt-16 text-base text-white xl:text-xl 2xl:text-2xl links nue-bold xl:w-[410px] 2xl:w-[500px]"
+                    <div
+                      class="ul mt-8 xl:mt-16 text-base text-white xl:text-xl 2xl:text-2xl links nue-bold xl:w-[410px] 2xl:w-[500px]"
                     >
-                      <li>
+                      <div class="toplinks space-x-8">
                         <a
                           href="https://www.linkedin.com/in/emisho-victor-126601175/"
                           class="hover:text-[#FDEA02] transition duration-500"
                           >LinkedIn</a
                         >
-                      </li>
-                      <li>
+                      
                         <a
                           href="https://twitter.com/Emishonowayi"
                           class="hover:text-[#FDEA02] transition duration-500"
                           >Twitter</a
                         >
-                      </li>
-                      <li>
+                      
                         <a
                             href="https://www.youtube.com/@EmishoVictor/videos"
                             class="hover:text-[#FDEA02] transition duration-500"
                             >Youtube</a
                           >
-                      </li>
-                      <li>
+                      </div>
+                      
+                      <div class="bottom space-x-8">
                         <a
-                            href="https://www.instagram.com/designbyemisho/"
-                            class="hover:text-[#FDEA02] transition duration-500"
-                            >Instagram</a
-                          >
-                      </li>
-                      <li>
+                          href="https://www.instagram.com/designbyemisho/"
+                          class="hover:text-[#FDEA02] transition duration-500"
+                          >Instagram</a
+                        >
+                      
                         <a
                           href="https://layers.to/emisho"
                           class="hover:text-[#FDEA02] transition duration-500"
                           >Layers.to</a
                         >
-                      </li>
-                    </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -514,7 +512,6 @@ import Lenis from '@studio-freight/lenis'
 
 import aosMixin from "~/mixins/aos";
 gsap.registerPlugin(ScrollTrigger);
-const tl = gsap.timeline();
 
 export default {
   name: "IndexPage",
@@ -984,5 +981,17 @@ body::-webkit-scrollbar-thumb {
   -ms-transform: rotate(-45deg) translateX(0px);
   -o-transform: rotate(-45deg) translateX(0px);
   width: 25px;
+}
+
+.ul {
+  @apply space-y-4
+}
+
+.ul > div {
+  @apply flex items-center justify-start;
+}
+
+.ul > div > a {
+  @apply block;
 }
 </style>
