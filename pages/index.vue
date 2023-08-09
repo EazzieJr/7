@@ -377,7 +377,7 @@
                             <div class="top">
                               <img
                                 class="w-full"
-                                :src="article.src"
+                                :src="`/images/${article.src}.gif`"
                                 :alt="article.alt"
                               />
                             </div>
@@ -557,21 +557,21 @@ export default {
       articles: [
         {
           link: "https://bootcamp.uxdesign.cc/its-about-time-we-kill-these-ux-practices-a7f9904ed42e",
-          src: "https://res.cloudinary.com/eazzie/image/upload/q_10/v1645811005/emishio/No_No_Hand_duut2i.gif",
+          src: "ux-practices",
           alt: "A gif of topic image",
           topic: "It’s about time we kill these Ux practices",
         },
 
         {
           link: "https://uxplanet.org/whats-so-bad-about-behance-s-ux-91622bbaca8d",
-          src: "https://res.cloudinary.com/eazzie/image/upload/c_scale,q_10,w_378/v1645811007/emishio/Behance_epptkf.gif",
+          src: "behance",
           alt: "A gif of topic image",
           topic: "What so bad about the UX of Behance?",
         },
 
         {
           link: "",
-          src: "https://res.cloudinary.com/eazzie/image/upload/q_10/v1645811004/emishio/Typewriter_p6gf9s.gif",
+          src: "you-x",
           alt: "A gif of topic image",
           topic: "The Death of User-friendly You-X",
           span: " (Coming soon)",
