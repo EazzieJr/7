@@ -10,7 +10,7 @@
           <div class="hover-reveal__inner">
             <img
               class="hover-reveal__image"
-              :src="`Images/large-${src}.png`"
+              :src="`/images/large-${src}.png`"
               :alt="alt"
             />-
           </div>
@@ -18,7 +18,7 @@
 
         <!-- Image for small screens -->
         <div class="image flex justify-center items-center lg:hidden">
-          <img class="" :src="`Images/large-${src}.png`" :alt="alt" />
+          <img class="" :src="`/images/large-${src}.png`" :alt="alt" />
         </div>
 
         <div class="text">

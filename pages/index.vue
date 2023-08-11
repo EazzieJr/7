@@ -150,7 +150,7 @@
             >
               <img
                 class="w-16 opacity-0"
-                src="Images/mouse-scroll.gif"
+                src="/images/mouse-scroll.gif"
                 alt=""
               />
             </div>
@@ -159,7 +159,7 @@
 
         <div
           class="overflow-hidden noise bg-white"
-          style="background-image: url('Images/noise.png')"
+          style="background-image: url('/images/noise.png')"
         >
           <div class="container h-full mx-auto px-6 sm:px-10 md:px-12 lg:px-10 2xl:px-40">
             <section class="about py-28 lg:py-32 xl:py-44 2xl:py-56" id="about">
@@ -167,7 +167,7 @@
                 <div class="image center w-full lg:max-w-[50%] xl:h-[512px] 2xl:h-[600px] overflow-hidden">
                   <img
                     class="lg:object-center lg:object-cover lg:w-full lg:h-full"
-                    src="Images/big-person.png"
+                    src="/images/big-person.png"
                     alt="An image of Emishio"
                   />
                 </div>
@@ -492,7 +492,7 @@
               <div class="hidden right-container md:block">
                 <img
                   class="absolute bottom-0 right-0 w-[250px] lg:w-[250px] xl:w-[300px] 2xl:w-[340px] xl:mr-20 2xl:mr-32"
-                  src="Images/hand.png"
+                  src="/images/hand.png"
                   alt="A fisted hand with 2 pointed fingers"
                 />
               </div>
