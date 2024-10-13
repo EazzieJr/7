@@ -147,6 +147,13 @@
                 </div>
 
                 <div class="relative bottom-projects">
+                  <HoverLink src="plumter"
+                    href="https://www.figma.com/proto/UBzZ09Pw0wiQv84n8fjRJ6/Plumter-Case-Study-Summary?page-id=&node-id=10-19236&t=z6fDOfSpP1CPe4PP-1"
+                    alt="A cover image for User Profile Plugin" class="user-profile">
+                    <span class="nue-bold">Plumter:</span>
+                    Plumter: Designing Plumter’s robust fintech ecosystem.
+                  </HoverLink>
+
                   <HoverLink src="waybill"
                     href="https://www.behance.net/gallery/142497875/Waybill-Logistics-App-Dashboard-Design"
                     alt="A cover image for Waybill" class="waybill">
@@ -160,14 +167,16 @@
                     <span class="nue-bold">Pagechap:</span> A one-link portfolio platform designed & built for creatives
                   </HoverLink>
 
-                  <HoverLink src="paymagic"
-                    href="https://www.behance.net/gallery/138620915/Paymagic-UIUX-Design-for-Payment-App"
-                    alt="A cover image for Paymagic" class="paymagic">
-                    <span class="nue-bold">Paymagic:</span> Crafting a
-                    lightweight credit/payment product.
-                  </HoverLink>
+
 
                   <div v-if="expanded" class="extendend-projects lg:hidden">
+                    <HoverLink src="paymagic"
+                      href="https://www.behance.net/gallery/138620915/Paymagic-UIUX-Design-for-Payment-App"
+                      alt="A cover image for Paymagic" class="paymagic">
+                      <span class="nue-bold">Paymagic:</span> Crafting a
+                      lightweight credit/payment product.
+                    </HoverLink>
+
                     <HoverLink src="made-in-nigeria"
                       href="https://www.behance.net/gallery/138142449/Website-Redesign-for-Open-Source-Project"
                       alt="A cover image for Made In Nigeria" class="">
@@ -190,9 +199,25 @@
                       inclusivity.
                       <span class="text-[#bbbbbb]">(Coming Soon...)</span>
                     </HoverLink>
+
                   </div>
 
                   <div class="hidden lg:block">
+                    <HoverLink src="paymagic"
+                      href="https://www.behance.net/gallery/138620915/Paymagic-UIUX-Design-for-Payment-App"
+                      alt="A cover image for Paymagic" class="paymagic">
+                      <span class="nue-bold">Paymagic:</span> Crafting a
+                      lightweight credit/payment product.
+                    </HoverLink>
+
+                    <HoverLink src="made-in-nigeria"
+                      href="https://www.behance.net/gallery/138142449/Website-Redesign-for-Open-Source-Project"
+                      alt="A cover image for Made In Nigeria" class="">
+                      <span class="nue-bold">Made in Nigeria:</span> Redesigning
+                      Nigeria’s first open-source curation website for better
+                      storytelling.
+                    </HoverLink>
+
                     <HoverLink src="reality-os"
                       href="https://twitter.com/Emishonowayi/status/1381674985459159040?s=20&t=7GoK3yXh-fzjZyJbwP-fow"
                       alt="A cover image for Reality OS" class="reality-os">
@@ -205,13 +230,6 @@
                       <span class="nue-bold">User Profile Plugin:</span>
                       Redesigning a globally used design plugin for greater
                       inclusivity.<span class="text-[#bbbbbb]">(Coming Soon...)</span>
-                    </HoverLink>
-
-                    <HoverLink src="plumter"
-                      href="https://www.figma.com/proto/UBzZ09Pw0wiQv84n8fjRJ6/Plumter-Case-Study-Summary?page-id=&node-id=10-19236&t=z6fDOfSpP1CPe4PP-1"
-                      alt="A cover image for User Profile Plugin" class="user-profile">
-                      <span class="nue-bold">Plumter:</span>
-                      Plumter: Designing Plumter’s robust fintech ecosystem.
                     </HoverLink>
                   </div>
 
