@@ -151,7 +151,7 @@
                     href="https://www.figma.com/proto/UBzZ09Pw0wiQv84n8fjRJ6/Plumter-Case-Study-Summary?page-id=&node-id=10-19236&t=z6fDOfSpP1CPe4PP-1"
                     alt="A cover image for User Profile Plugin" class="user-profile">
                     <span class="nue-bold">Plumter:</span>
-                    Plumter: Designing Plumter’s robust fintech ecosystem.
+                    Designing Plumter’s robust fintech ecosystem.
                   </HoverLink>
 
                   <HoverLink src="waybill"
